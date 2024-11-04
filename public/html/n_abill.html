@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<meta http-equiv="Content-Language" content="zh-CN">
+  <title>DDUKDDAK!</title>
+</head>
+<body>
+  <table width="100%" cellpadding="0" cellspacing="0" bgcolor="#f1f1f1">
+    <tr>
+      <td align="center" style="padding: 40px 0;">
+        <table width="600" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="border-radius: 6px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);">
+          <!-- Header -->
+			<tr>
+
+
+            <td align="center" bgcolor="#f1f1f1" style="padding: 20px 0;">
+			  <a href="https://www.1ndd.com/" target="_blank"><img src="https://www.1ndd.com/img/1ndd_logo.png" width="200"></a>
+<h2 id="mainHeading" style="color: #333333;">Agent Activity <br>Monthly Settlement Details</h2>
+<h4 style="color: #333333;">Please choose your language.</h4>
+
+			        <!-- Language Buttons -->
+        <button style="padding: 4px;" onclick="showChinese()">中 文</button>
+        <button style="padding: 3.5px;" onclick="showKorean()">한국어</button>
+			  <button style="padding: 5px;" onclick="showEnglish()">English</button>
+            </td>
+          </tr>
+
+          <!-- Content -->
+          <tr>
+            <td align="left" style="padding: 40px;">
+
+              <!-- English Content -->
+              <div id="englishContent">
+ 		            <p style="font-size: 16px; line-height: 1.5; color: #666666;"> {{date}} Agent activity settlement details.</p>
+							  <p style="font-size: 20px; line-height: 1.5; color: #ff6699;"><strong> Total number of friends : {{total_friends}}friends</strong></p>
+							  <p style="font-size: 20px; line-height: 1.5; color: #ff6699;"><strong> Total points : {{total_points}}points</strong></p>
+							  <p style="font-size: 20px; line-height: 1.5; color: #ff6699;"><strong> My Revenue : ${{my_profit}}</strong></p>
+							  <p style="font-size: 20px; line-height: 1.5; color: #ff6699;"><strong> Deduction : ${{deduction}}</strong></p>
+							  <p style="font-size: 20px; line-height: 1.5; color: #ff6699;"><strong> Agent friends revenue : ${{agent_frient_rev}}</strong></p>
+							  <p style="font-size: 20px; line-height: 1.5; color: #ff6699;"><strong> Final revenue amount : ${{final_profit}}</strong></p>
+					      <p style="font-size: 16px; line-height: 1.5; color: #666666;">Thank you for serving as our agent.<br>The final amount can be converted to points in “Friend” - “Settlement” on the homepage.</p>
+              </div>
+
+              <!-- Chinese Content -->
+              <div id="chineseContent" style="display: none;">
+ 		            <p style="font-size: 16px; line-height: 1.5; color: #666666;"> {{date}} 代理活动结算明细。</p>
+							  <p style="font-size: 20px; line-height: 1.5; color: #ff6699;"><strong> 好友总数 : {{total_friends}}个</strong></p>
+							  <p style="font-size: 20px; line-height: 1.5; color: #ff6699;"><strong> 总持有积分 : {{total_points}}积分</strong></p>
+							  <p style="font-size: 20px; line-height: 1.5; color: #ff6699;"><strong> 我的收益 : ${{my_profit}}</strong></p>
+							  <p style="font-size: 20px; line-height: 1.5; color: #ff6699;"><strong> 扣除金额 : ${{deduction}}</strong></p>
+							  <p style="font-size: 20px; line-height: 1.5; color: #ff6699;"><strong> 从代理朋友收入 : ${{agent_frient_rev}}</strong></p>
+							  <p style="font-size: 20px; line-height: 1.5; color: #ff6699;"><strong> 最终收益金额 : ${{final_profit}}</strong></p>
+					      <p style="font-size: 16px; line-height: 1.5; color: #666666;"> 感谢您担任我们的代理。<br>最终金额可在首页“好友”-“结算”中兑换积分。</p>
+							</div>
+
+						  <!-- Korean Content -->
+              <div id="koreanContent" style="display: none;">
+ 		            <p style="font-size: 16px; line-height: 1.5; color: #666666;"> {{date}} 에이전트 활동 정산 내역 입니다.</p>
+							  <p style="font-size: 20px; line-height: 1.5; color: #ff6699;"><strong> 총 친구수 : {{total_friends}}명</strong></p>
+							  <p style="font-size: 20px; line-height: 1.5; color: #ff6699;"><strong> 총 보유포인트 : {{total_points}}포인트</strong></p>
+							  <p style="font-size: 20px; line-height: 1.5; color: #ff6699;"><strong> My 수익 : {{my_profit}}원</strong></p>
+							  <p style="font-size: 20px; line-height: 1.5; color: #ff6699;"><strong> 공제액 : {{deduction}}원</strong></p>
+							  <p style="font-size: 20px; line-height: 1.5; color: #ff6699;"><strong> 에이전트 친구 수익 : {{agent_frient_rev}}원</strong></p>
+							  <p style="font-size: 20px; line-height: 1.5; color: #ff6699;"><strong> 최종 수익 금액 : {{final_profit}}원</strong></p>
+					      <p style="font-size: 16px; line-height: 1.5; color: #666666;"> 에이전트로 활동해 주셔서 감사합니다.<br>최종금액은 "친구" - "정산"에서 포인트로 전환할 수 있습니다.</p>
+               </div>
+            </td>
+          </tr>
+          <!-- Footer -->
+          <tr>
+            <td align="center" bgcolor="#f1f1f1" style="padding: 20px 0;"><img src="https://www.1ndd.com/img/logo1.png"  alt="center" width="50"/>
+              <p style="font-size: 14px; line-height: 1.5; color: #999999;">© 2023 1ndd.com. All rights reserved.</p>
+        <p style="font-size: 14px; line-height: 1.5; color: #999999;">help@1ndd.com</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+
+  <script>
+    function showEnglish() {
+      // Hide Korean and Chinese content
+      document.getElementById('koreanContent').style.display = 'none';
+      document.getElementById('chineseContent').style.display = 'none';
+      // Display English content
+      document.getElementById('englishContent').style.display = 'block';
+      // Update title and main heading
+      document.getElementById('mainHeading').innerText = 'Agent Activity \nMonthly Settlement Details';
+    }
+
+    function showChinese() {
+      // Hide Korean and English content
+      document.getElementById('koreanContent').style.display = 'none';
+      document.getElementById('englishContent').style.display = 'none';
+      // Display Chinese content
+      document.getElementById('chineseContent').style.display = 'block';
+      // Update title and main heading
+      document.getElementById('mainHeading').innerText = '代理活动\n每月结算详细信息';
+    }
+
+    function showKorean() {
+      // Hide English and Chinese content
+      document.getElementById('englishContent').style.display = 'none';
+      document.getElementById('chineseContent').style.display = 'none';
+      // Display Korean content
+      document.getElementById('koreanContent').style.display = 'block';
+      // Update title and main heading
+      document.getElementById('mainHeading').innerText = '에이전트 활동 \n월간 결산 내역';
+    }
+  </script>
+</body>
+</html>

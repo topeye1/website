@@ -1,0 +1,242 @@
+.sidebar .nav-item .nav-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+.bg-gradient-primary {
+    background-color: #001529;
+    background-image: linear-gradient(180deg, #001529 10%, #03294d 100%);
+    background-size: cover;
+}
+.bg-login-image {
+    background: url(../img/brand/logo.png);
+    background-position: center;
+    background-size: 450px 240px;
+    background-repeat: no-repeat;
+}
+
+.user-login-row {
+    background: url(../img/brand/logo.png);
+    background-position: center;
+    background-size: 450px 240px;
+    background-repeat: no-repeat;
+}
+
+.bg-gradient-primary.my-body {
+    background-color: #fdfdfd;
+    background-image: none;
+    background-size: cover;
+}
+.dropdown.mb-4.my-dropdown {
+    display: flex;
+    justify-content: end;
+}
+.lang-dropdown {
+    width: 7em;
+    color: #040404;
+    background-color: #fdfdfd !important;
+    border-color: #d3d4d7 !important;
+}
+.lang-dropdown:active, .lang-dropdown:focus, .lang-dropdown:hover {
+    color: #040404;
+}
+.form-control.form-control-user.my-input {
+    font-size: .8rem;
+    border-radius: 0.4rem;
+    padding: 1.2rem 0.8rem;
+}
+.form-group.my-form {
+    font-size: 0.8rem;
+}
+.header-brand-img {
+    width: 16em;
+}
+.text-center {
+    font-size: .8rem;
+}
+.text-center.link-btn a {
+    color: #404450  ;
+    font-size: 1rem;
+}
+.btn.btn-primary.btn-user {
+    width: 70%;
+    margin: auto;
+    color: #fff;
+    background-color: #404450;
+    border-color: #404450;
+    font-size: 1rem;
+    border-radius: 0.4rem;
+    padding: 0.5rem 0.7rem;
+}
+
+.btn.btn-primary.btn-user.my-view {
+    width: 70%;
+    margin: auto;
+    color: #404450;
+    background-color: #ffffff;
+    border-color: #404450;
+    font-size: 1rem;
+    border-radius: 0.4rem;
+    padding: 0.5rem 0.7rem;
+}
+
+.middle-text {
+    position: relative;
+    width: 100%;
+    padding-right: 0rem;
+}
+
+.middle-btn {
+    padding-right: 0rem;
+    padding-left: 0rem;
+}
+.text-xs.dash-top-text {
+    font-size: 1rem;
+}
+.dash-top-items {
+    cursor: pointer;
+}
+.card-body.my-top-card {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 0.5rem 1.25rem;
+}
+.dropdown .dropdown-menu .dropdown-header{
+    font-weight: 800;
+    font-size: 0.8rem;
+    color: #b6b6b9;
+}
+.form-control.active-checked {
+    width: 1.2rem;
+    cursor: pointer;
+}
+.table.table-bordered thead {
+    background-color: #064077;
+    color: white;
+}
+.btn.btn-primary {
+    background-color: #064077;
+    border-color: #064077;
+}
+.bg-white {
+    background-color: #fff !important;
+}
+.table td.touch-td {
+    cursor: pointer;
+    color: cadetblue;
+    text-align: -webkit-center;
+}
+.table td {
+    height: 2rem;
+    padding: 0rem;
+    vertical-align: middle;
+    font-size: 0.85rem;
+}
+.table th {
+    height: 2rem;
+    padding: 0.75rem;
+    font-size: 0.85rem;
+}
+.modal-dialog.add-user {
+    width: 50rem !important;
+    max-width: 60rem !important;
+    margin: 1.75rem auto;
+}
+.show_pwd {
+    cursor: pointer;
+}
+.hidden_pwd {
+    cursor: pointer;
+}
+.show_conf_pwd {
+    cursor: pointer;
+}
+.hidden_conf_pwd {
+    cursor: pointer;
+}
+
+.error-text {
+    font-size: 0.7rem;
+    color: red;
+}
+
+.direction-key {
+    display: flex;
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+    align-items: center;
+    cursor: pointer;
+    color: #858796;
+}
+
+.direction-key:hover {
+    color: #4e73df;
+}
+
+.chart-pie {
+    position: relative;
+    height: 9.2rem !important;
+    width: 50%;
+}
+.nav-underline .nav-link.active, .nav-underline .show>.nav-link {
+    font-weight: 700 !important;
+    color: #1cc88a !important;
+    border-bottom-color: currentcolor;
+}
+.nav-underline .nav-link {
+    border-bottom: 0.125rem solid transparent;
+    padding: 0.2rem 2rem !important;
+}
+a {
+    color: #000 ;
+    text-decoration: none;
+    background-color: transparent;
+}
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #064077;
+    border-color: #04335f;
+}
+
+.coupon-card-column {
+    max-height: 3rem;
+}
+.coupon-card-column span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+}
+.radio-group {
+    cursor: pointer;
+}
+.card.shadow {
+    font-size: 0.9rem;
+    width: 15rem;
+    height: auto;
+}
+.card-header-title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+}
+
+a.link_mail {
+    color: #1677ff;
+    background-color: transparent;
+    text-decoration-line: underline;
+    cursor: pointer;
+}
+
+.description-tooltip{
+    position: absolute;
+    width: 12rem;
+    height: auto;
+    background-color: #F0F1F4;
+    font-size: 0.65rem;
+    padding: 0.7rem;
+    border-radius: 0.3rem;    
+}

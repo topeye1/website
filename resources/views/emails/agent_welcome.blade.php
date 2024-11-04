@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <title>DDUKDDAK!</title>
+</head>
+<body>
+<table width="100%" cellpadding="0" cellspacing="0" bgcolor="#f1f1f1">
+    <tr>
+        <td align="center" style="padding: 40px 0;">
+            <table width="600" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="border-radius: 6px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);">
+                <!-- Header -->
+                <tr>
+
+
+                    <td align="center" bgcolor="#f1f1f1" style="padding: 20px 0;">
+                        <a href="https://www.1ndd.com/" target="_blank"><img src="https://www.1ndd.com/img/1ndd_logo.png" width="200"></a>
+                        <h2 id="mainHeading" style="color: #333333;">Congratulations!<br>You have become an agent.</h2>
+                        <h4 style="color: #333333;">Please choose your language.</h4>
+
+                        <!-- Language Buttons -->
+                        <button style="padding: 4px;" onclick="showChinese()">中 文</button>
+                        <button style="padding: 3.5px;" onclick="showKorean()">한국어</button>
+                        <button style="padding: 5px;" onclick="showEnglish()">English</button>
+                    </td>
+                </tr>
+
+                <!-- Content -->
+                <tr>
+                    <td align="left" style="padding: 40px;">
+
+                        <!-- English Content -->
+                        <div id="englishContent">
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;">Thank you for purchasing the Lv.6 and Lv.7 coupons.<br>Now you can become an agent, recruit your friends, and receive the following benefits:</p>
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;">1. Agents can receive back a portion of the coupons used by recruited friends as agent profits.<br>This is called the agent discount rate, Lv.6 = 20% and Lv7 = 25%.</p>
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;">2. Agents can also share a portion of this discount rate with friends by setting a discount rate.<br>If a Lv.6 agent receives a 20% discount rate and shares 10% with a friend, the agent will receive the remaining 10% as agent profit, and the friend will receive a 10% discount on the coupon amount.</p>
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;">3. You will also continuously receive a portion of your friend's coupon usage.</p>
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;">4. However, if your friend acts independently as an agent, the friendship relationship will be reset.<br>However, you still can receive a portion of the agent profits of your friend who has become an independent agent as compensation.</p>
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;">5. Agent activity profits are converted into points once a month and can be used like cash.</p>
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;"><br>For more information, please log in and refer to the “Friends” menu.</p>
+                        </div>
+
+                        <!-- Chinese Content -->
+                        <div id="chineseContent" style="display: none;">
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;">感谢您购买Lv.6和Lv.7优惠券。<br>现在您可以成为代理商，招募好友，并获得以下福利：</p>
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;">1、代理商可将招募好友使用的优惠券返还一部分作为代理商利润。<br>这就是所谓的代理折扣率，Lv.6=20%，Lv7=25%。</p>
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;">2、代理商还可以通过设置折扣率，将部分折扣率分享给好友。<br>如果Lv.6代理商获得20%的折扣率，并与好友分享10%，代理商将获得剩余的10%作为代理商利润，好友将获得优惠券金额的10%折扣。</p>
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;">3、您还将持续获得好友优惠券使用量的一部分。</p>
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;">4、但如果您的好友单独代理，好友关系将会重置。<br>不过，您仍然可以从您成为独立经纪人的朋友的代理利润中获得一部分作为补偿。</p>
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;">5、代理活动利润每月兑换一次积分，可像现金一样使用。</p>
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;"><br>欲了解更多信息，请登录并参阅“好友”菜单。</p>
+                        </div>
+
+                        <!-- Korean Content -->
+                        <div id="koreanContent" style="display: none;">
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;">Lv.6, Lv.7 쿠폰을 구매해 주셔서 감사합니다.<br>이제 에이전트가 되셔서 친구들을 모집할 수 있으며, 다음과 같은 혜택을 받으실 수 있습니다.</p>
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;">1. 에이전트는 모집한 친구들이 사용한 쿠폰의 금액에서 일부를 에이전트 수익으로 돌려 받을 수 있습니다.<br>이를 에이전트 할인률이라 합니다. (Lv.6 = 20%, Lv7 = 25%)</p>
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;">2. 또한 에이전트는 할인률 설정을 통해서 이 할인률의 일부를 친구에게 나눠줄 수 있습니다.<br>만약, Lv.6 에이전트로 20% 할인률을 적용 받은 상태에서 친구에서 10%를 나누어 주면, 에이전트는 나머지 10%를 수익으로 돌려 받고, 친구는 쿠폰 사용 금액에서 10% 만큼 할인 받을 수 있습니다.</p>
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;">3. 또한 지속적으로 친구의 쿠폰 사용액 중 일부를 받아오게 됩니다.</p>
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;">4. 다만, 친구가 에이전트로 독립해서 활동할 경우, 친구관계는 초기화 됩니다.<br>하지만 에이전트로 독립한 친구의 에이전트 수익의 일부를 보상으로 받으실 수 있습니다.</p>
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;">5. 에이전트 활동 수익은 매월 1회 포인트로 전환되며 현금과 같이 사용할 수 있습니다.</p>
+                            <p style="font-size: 16px; line-height: 1.5; color: #666666;"><br>자세한 내용은 로그인 하여 "친구" 메뉴를 참고하시기 바랍니다.</p>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Footer -->
+                <tr>
+                    <td align="center" bgcolor="#f1f1f1" style="padding: 20px 0;"><img src="https://www.1ndd.com/img/logo1.png"  alt="center" width="50"/>
+                        <p style="font-size: 14px; line-height: 1.5; color: #999999;">© 2023 1ndd.com. All rights reserved.</p>
+                        <p style="font-size: 14px; line-height: 1.5; color: #999999;">help@1ndd.com</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+<script>
+    function showEnglish() {
+        // Hide Korean and Chinese content
+        document.getElementById('koreanContent').style.display = 'none';
+        document.getElementById('chineseContent').style.display = 'none';
+        // Display English content
+        document.getElementById('englishContent').style.display = 'block';
+        // Update title and main heading
+        document.getElementById('mainHeading').innerText = 'Congratulations!\nYou have become an agent.';
+    }
+
+    function showChinese() {
+        // Hide Korean and English content
+        document.getElementById('koreanContent').style.display = 'none';
+        document.getElementById('englishContent').style.display = 'none';
+        // Display Chinese content
+        document.getElementById('chineseContent').style.display = 'block';
+        // Update title and main heading
+        document.getElementById('mainHeading').innerText = '恭喜！\n您已成为代理商。';
+    }
+
+    function showKorean() {
+        // Hide English and Chinese content
+        document.getElementById('englishContent').style.display = 'none';
+        document.getElementById('chineseContent').style.display = 'none';
+        // Display Korean content
+        document.getElementById('koreanContent').style.display = 'block';
+        // Update title and main heading
+        document.getElementById('mainHeading').innerText = '축하합니다! \n에이전트가 되셨습니다.';
+    }
+</script>
+</body>
+</html>

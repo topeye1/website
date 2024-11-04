@@ -1,0 +1,484 @@
+.active{
+    background-color: white
+}
+#myTab{
+    background-color: #dee2e6
+}
+.nav-link{
+    color: #666
+}
+.userpage-content {
+    background-color: #CCD1DE;
+}
+.nav-item.nav-link{
+    background-color: #BABFCE;
+    margin-right: 0.2rem;
+}
+.market-logo-btn{
+    cursor: pointer;
+}
+.text-column span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+}
+.table {
+    color: #414141;
+}
+.nav-underline .nav-link.active, .nav-underline .show>.nav-link {
+    font-weight: 700 !important;
+    color: #404450 !important;
+    border-bottom-color: currentcolor;
+}
+.nav-underline .nav-link {
+    border-bottom: 0.125rem solid transparent;
+    padding: 0.2rem 2rem !important;
+}
+.card.shadow {
+    font-size: 0.85rem;
+    width: 15rem;
+    height: auto;
+}
+.card-header-title {
+    font-size: 0.9rem !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+}
+.md-bold-font {
+    font-weight: bold;
+    font-size: 1rem;
+}
+.mx-bold-font {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.modal-body.menu-body {
+    padding-left: 0;
+    padding-right: 0;
+}
+.user-page-table {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+.user-page-table thead {
+    background-color: #DCE0ED;
+    color: #202228;
+}
+.user-pagey-table tr {
+    border: none;
+}
+.user-page-table tr th {
+    border: none;
+}
+.user-page-table tr td {
+    border: none;
+    padding: 0.5rem;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #757C8F;
+    border-color: #757C8F;
+}
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.1rem 0.4rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #4e73df;
+    background-color: #fff;
+    border: 1px solid #dddfeb;
+}
+.card.shadow.payment-modal-card {
+    width: 13rem;
+}
+
+.pay-link{
+    color: #666;
+    display: block;
+    padding: 0.5rem 1rem;
+}
+.nav-tabs .pay-item.show .pay-link, .nav-tabs .pay-link.active {
+    color: #fff;
+    background-color: #404450;
+    border-color: #dddfeb #dddfeb #fff;
+}
+.pay-item.pay-link {
+    background-color: #fff;
+    justify-content: center;
+}
+
+.nav-fill .pay-item, .nav-fill>.pay-link {
+    flex: 1 1 auto;
+    text-align: center;
+}
+.nav-tabs .pay-link {
+    margin-bottom: -1px;
+    border: 1px solid transparent;
+    border-top-left-radius: 0.35rem;
+    border-top-right-radius: 0.35rem;
+}
+.pay-body-content {
+    border: 1px solid;
+    border-radius: 0.7rem;
+    min-height: 15rem;
+    background-color: white;
+    margin: 0;
+}
+.btn-black {
+    color: #fff;
+    background-color: #404450;
+    border-color: #404450;
+}
+.points-content {
+    height: auto;
+    border: 1px solid #F0F1F4;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: #F0F1F4;
+}
+.btn.btn-primary.btn-user.my-view {
+    width: 70%;
+    margin: auto;
+    color: #404450;
+    background-color: #ffffff;
+    border-color: #404450;
+    font-size: 1rem;
+    border-radius: 0.4rem;
+    padding: 0.5rem 0.7rem;
+}
+.btn-confirm {
+    width: 13rem;
+    background-color: #404450;
+    border-color: #404450;
+    color: #fff;
+}
+.btn-disable {
+    width: 13rem;
+    background-color: #9fa0a5;
+    border-color: #9fa0a5;
+    color: #fff;
+    border-radius: 0.35rem
+}
+.btn-ok-confirm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    background-color: #404450;
+    border-color: #404450;
+    color: #fff;
+}
+.show_api_key {
+    cursor: pointer;
+}
+.hidden_api_key {
+    cursor: pointer;
+}
+.show_secret_key {
+    cursor: pointer;
+}
+.hidden_secret_key {
+    cursor: pointer;
+}
+.my-middle-btn {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: #404450;
+    background-color: transparent;
+    border-color: #666666;
+    border-radius: 0.4rem;
+}
+.text-bold-font{
+    font-weight: bold;
+    text-align: center;
+    color: #404450;
+    font-size: 1.25rem;
+}
+.text-title-font{
+    font-weight: 400;
+    text-align: center;
+    color: #757C8F;
+    font-size: 1.25rem;
+}
+.text-value-font{
+    font-weight: bold;
+    color: #404450;
+}
+.select-direction {
+    display: flex;
+    background-color: #EEF0F3;
+    border-radius: 0.2rem;
+    align-items: center;
+    height: 2rem;
+}
+.direction-val {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    color: #131518;
+}
+.direction-key {
+    cursor: pointer;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.description-tooltip{
+    position: absolute;
+    width: 12rem;
+    height: auto;
+    background-color: #F0F1F4;
+    font-size: 0.65rem;
+    padding: 0.7rem;
+    border-radius: 0.3rem;
+}
+.tab_logo {
+    width: 170px;
+}
+.color-live {
+    background-color: #F14382;
+    border-radius: 1.5rem;
+    color: #fff;
+    padding: 0.2rem 0.6rem 0.2rem 0.6rem;
+    font-size: 0.8rem;
+}
+.btn_stop {
+    width: 100px;
+}
+.btn_start {
+    width: 100px;
+    height: 30px;
+    font-size: 0.9rem;
+}
+.setting_text {
+    width: 100%;
+    height: 35px;
+    background-color: #EEF0F3;
+    border-radius: 0.2rem;
+    border: 0;
+}
+.edit-pen-icon {
+    cursor: pointer;
+}
+
+.card-body.my-top-card {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 0.5rem;
+}
+.progress {
+    display: flex;
+    height: 0.6rem;
+    overflow: hidden;
+    line-height: 0;
+    font-size: .75rem;
+    background-color: #eaecf4;
+    border-radius: 0.35rem;
+}
+.market-revenue-row {
+    align-items: center;
+}
+.market-name {
+    font-size: 0.8rem;
+    color: #404450;
+}
+.market-money {
+    display: flex;
+    justify-content: end;
+    font-size: 0.75rem;
+    color: #404450;
+}
+.line-chart-border {
+    border: 1px solid #dddddf;
+    padding: 0.8rem 0;
+}
+select.list-pages {
+    border-color:#c3c3c3;
+    width: 8rem;
+    font-size: 0.9rem;
+    padding-left: 5px;
+    border-radius: 0.2rem;
+    height: 2rem;
+}
+.top-my-info {
+    position:absolute;
+    right:2rem;
+    width: auto;
+    height: 1.5rem;
+    border-radius: 1rem;
+    background-color: #F0F1F4;
+}
+
+.trade-card-header {
+    padding: 0.75rem 0.5rem;
+    margin-bottom: 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e3e6f0;
+}
+.trade-header-title {
+    text-align: center;
+    color: #404450;
+    font-weight: bold;
+    font-size: 0.9rem;
+    vertical-align:middle;
+    margin-right: 5px;
+}
+.trade-header-leverage {
+    text-align: center;
+    color: #404450;
+    font-weight: bold;
+    vertical-align:bottom;
+    font-size: 0.75rem;
+    padding-top: 2px;
+}
+.trade-header-profit {
+    width: 100%;
+    text-align: right;
+    color: #404450;
+    font-weight: bold;
+    font-size: 0.9rem;
+    vertical-align:bottom;
+}
+.trade-color-live {
+    margin-right: 5px;
+    background-color: #F14382;
+    border-radius: 1.2rem;
+    color: #fff;
+    padding: 0.2rem 0.4rem 0.1rem 0.4rem;
+    font-size: 0.6rem;
+    height: 1.2rem;
+}
+.trade-color-stop {
+    margin-right: 5px;
+    background-color: #DCE0ED;
+    border-radius: 1.2rem;
+    color: #fff;
+    padding: 0.2rem 0.4rem 0.1rem 0.4rem;
+    font-size: 0.6rem;
+    height: 1.2rem;
+}
+.trade-color-break {
+    margin-right: 5px;
+    background-color: #FFAA04;
+    border-radius: 1.2rem;
+    color: #fff;
+    padding: 0.2rem 0.4rem 0.1rem 0.4rem;
+    font-size: 0.6rem;
+    height: 1.2rem;
+}
+.trade-card-body {
+    height: 22rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#trading_orders {
+    background-color: white;
+    width: 20rem;
+    height: 450px;
+}
+#trading_table td {
+    padding: 0.3rem;
+    font-size: 0.7rem;
+}
+
+.scroll-to-top {
+    margin-bottom: 3rem
+}
+
+.loader-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.loader {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: linear-gradient(0deg, #FFFFFF 40%, #008fdc 75%, #272e5e 100%);
+    animation: spin 1s linear infinite;
+}
+
+.inner-circle {
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.row {
+    margin-right: 0rem;
+    margin-left: 0rem;
+}
+
+@keyframes spin {
+from {
+    transform: rotate(0);
+}
+to{
+    transform: rotate(360deg);
+}
+}
+
+
+
+
+footer.sticky-footer {
+width: 100%;
+position: fixed;
+bottom: 0px;
+background-color: #757C8F;
+padding: 1rem;
+height: 40px;
+}
+@media screen and (max-width: 600px) {
+.header-pc {
+    display: none !important;
+}
+.header-mobile {
+    display: flex !important;
+}
+#coupon-card-pc {
+    display: none !important;
+}
+#coupon-card-mobile {
+    display: block !important;
+}
+#coupon-card-layout {
+    justify-content: center;
+}
+}
+@media screen and (min-width: 600px) {
+.header-pc {
+    display: flex !important;
+}
+.header-mobile {
+    display: none !important;
+}
+#coupon-card-pc {
+    display: block !important;
+}
+#coupon-card-mobile {
+    display: none !important;
+}
+.modal-dialog.payment-modal {
+    width: 50rem !important;
+    max-width: 60rem !important;
+    margin: 1.75rem auto;
+}
+}
