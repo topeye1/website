@@ -101,6 +101,7 @@
                         let display1 = 'none !important';
                         let display2 = 'none !important';
                         let live_color = '';
+                        let live_text = 'LIVE';
                         if (parseInt(list.status) !== 1) {
                             live_color = 'style="background-color: #DCE0ED;"';
                         } else {
@@ -109,14 +110,20 @@
                         if (parseInt(list.bRun) === 1) {
                             display1 = 'flex';
                             running_coins += 1
+                            if (parseInt(list.hold) === 1) {
+                                live_text = 'HOLDING';
+                                live_color = 'style="background-color: #00B0F0;"';
+                            }
                         } else {
+                            //live_text = 'STOP';
+                            live_color = 'style="background-color: #EDABC3;"';
                             display2 = 'flex';
                         }
 
                         tag += '<div class="col-6 mb-3">';
                         tag += '<div class="row align-items-center">';
                         tag += '<div class="col-4">'+coin_name+'</div>';
-                        tag += '<div class="col-3"><span class="color-live" '+live_color+'>LIVE</span></div>';
+                        tag += '<div class="col-3"><span class="color-live" '+live_color+'>'+live_text+'</span></div>';
                         tag += '<div class="col-5">';
                         tag += '<div id="btn-coin-stop_'+coin_id+'_'+coin_name+'_1" class="btn btn-user my-middle-btn btn-block btn_stop" style="display: '+display1+';">';
                         tag += '{{ __('userpage.stop') }}';

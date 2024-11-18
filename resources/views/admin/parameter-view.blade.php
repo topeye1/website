@@ -15,6 +15,9 @@
                         <li class="nav-item">
                             <a class="nav-link" data-set="etc" href="#">ETC</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-set="hold" href="#">Holding</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -419,6 +422,23 @@
                     </div>
                 </div>
 
+                <div class="card-body form-group param-body-holding" style="display: none; width: 80%; margin: 0 auto">
+                    <div class="row w-100 mb-3 pl-3 pr-3 justify-content-start">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6 pr-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-3">
+                                            <input type="number" class="form-control form-control-user my-input" id="input_param_h1" style="text-align: center;">
+                                        </div>
+                                        <div class="col-9">{{ __('userpage.param_h1') }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card-footer text-center card-notice-add-btn">
                     <div id="edit_param_button" class="btn btn-success mt-1" style="width: 80px; margin-right: 30px;">{{ __('userpage.edit') }}</div>
                 </div>
@@ -446,14 +466,22 @@
                     $('.param-tab .param-body-watcher').css({'display':'block'});
                     $('.param-tab .param-body-maker').css({'display':'none'});
                     $('.param-tab .param-body-etc').css({'display':'none'});
+                    $('.param-tab .param-body-holding').css({'display':'none'});
                 } else if (setv === 'maker') {
                     $('.param-tab .param-body-watcher').css({'display':'none'});
                     $('.param-tab .param-body-maker').css({'display':'block'});
                     $('.param-tab .param-body-etc').css({'display':'none'});
+                    $('.param-tab .param-body-holding').css({'display':'none'});
                 } else if (setv === 'etc') {
                     $('.param-tab .param-body-watcher').css({'display':'none'});
                     $('.param-tab .param-body-maker').css({'display':'none'});
                     $('.param-tab .param-body-etc').css({'display':'block'});
+                    $('.param-tab .param-body-holding').css({'display':'none'});
+                } else if (setv === 'hold') {
+                    $('.param-tab .param-body-watcher').css({'display':'none'});
+                    $('.param-tab .param-body-maker').css({'display':'none'});
+                    $('.param-tab .param-body-etc').css({'display':'none'});
+                    $('.param-tab .param-body-holding').css({'display':'block'});
                 }
 
             });
@@ -557,6 +585,16 @@
                     for (let i = 1; i <= 5; i++) {
                         let param1 = 'e' + i;
                         let param2 = $('#input_param_e'+i).val();
+                        let param = {
+                            p1: param1,
+                            p2: param2
+                        }
+                        edit_datas.push(param);
+                    }
+                } else if (setv === 'hold') {
+                    for (let i = 1; i <= 1; i++) {
+                        let param1 = 'h' + i;
+                        let param2 = $('#input_param_h' + i).val();
                         let param = {
                             p1: param1,
                             p2: param2
@@ -671,6 +709,10 @@
                                     $('#input_param_e4').val(list.pvalue);
                                 } else if (list.pname === 'e5') {
                                     $('#input_param_e5').val(list.pvalue);
+                                }
+                            } else if (list.ptype === 'h') {
+                                if (list.pname === 'h1') {
+                                    $('#input_param_h1').val(list.pvalue);
                                 }
                             }
                         }

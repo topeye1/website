@@ -332,7 +332,8 @@ class UserSettingController extends BaseController
         }
 
         $sql = "SELECT coin_id, coin_name, status, ";
-        $sql .= "IFNULL((SELECT is_run FROM tbl_live_coins WHERE coin_num = coin_id AND user_num=".$user_num." AND market='".$market."'), 0) AS bRun ";
+        $sql .= "IFNULL((SELECT is_run FROM tbl_live_coins WHERE coin_num = coin_id AND user_num=".$user_num." AND market='".$market."'), 0) AS bRun, ";
+        $sql .= "IFNULL((SELECT hold_status FROM tbl_live_coins WHERE coin_num = coin_id AND user_num=".$user_num." AND market='".$market."'), 0) AS hold ";
         $sql .= "FROM fix_coins ";
         $sql .= "WHERE market = '".$market."' ";
         $sql .= "ORDER BY coin_name ASC";
@@ -495,6 +496,7 @@ class UserSettingController extends BaseController
                                 'rate_liq' => $liquidation_range,
                                 'is_run' => $is_run,
                                 'kid' => $key_id,
+                                'hold_status' => 0,
                             ]
                         );
                 } else {

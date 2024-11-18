@@ -251,6 +251,7 @@ return [
     'param_e3' => 'Lv6 agent basic discount rate(%)',
     'param_e4' => 'Lv7 agent basic discount rate(%)',
     'param_e5' => 'New user bonus amount',
+    'param_h1' => 'Holding rate(%)',
     'deposit_usdt_address' => 'Deposit USDT address',
     'deposit_network' => 'Deposit network',
     'TxID' => 'TxID',

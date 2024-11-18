@@ -251,6 +251,7 @@ return [
     'param_e3' => 'Lv6エージェントのデフォルト割引率(%)',
     'param_e4' => 'Lv7エージェントのデフォルト割引率(%)',
     'param_e5' => '新規ユーザー贈呈金額',
+    'param_h1' => 'Holding比率(%)',
     'deposit_usdt_address' => 'デポジットUSDTアドレス',
     'deposit_network' => '入金ネットワーク',
     'TxID' => 'TxID',

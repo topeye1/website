@@ -251,6 +251,7 @@ return [
     'param_e3' => 'Lv6代理基本折扣率(%)',
     'param_e4' => 'Lv7代理基本折扣率(%)',
     'param_e5' => '新用户奖励金额',
+    'param_h1' => 'Holding率(%)',
     'deposit_usdt_address' => 'USDT充值地址',
     'deposit_network' => '汇款网络',
     'TxID' => 'TxID',

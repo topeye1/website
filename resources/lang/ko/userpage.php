@@ -251,6 +251,7 @@ return [
     'param_e3' => 'Lv6 에이전트 기본 할인율(%)',
     'param_e4' => 'Lv7 에이전트 기본 할인율(%)',
     'param_e5' => '신규유저 증정금액',
+    'param_h1' => 'Holding 비율(%)',
     'deposit_usdt_address' => '입금 USDT 주소',
     'deposit_network' => '입금 네트워크',
     'TxID' => 'TxID',
