@@ -102,11 +102,6 @@
                         let display2 = 'none !important';
                         let live_color = '';
                         let live_text = 'LIVE';
-                        if (parseInt(list.status) !== 1) {
-                            live_color = 'style="background-color: #DCE0ED;"';
-                        } else {
-                            total_coins += 1
-                        }
                         if (parseInt(list.bRun) === 1) {
                             display1 = 'flex';
                             running_coins += 1
@@ -118,6 +113,11 @@
                             //live_text = 'STOP';
                             live_color = 'style="background-color: #EDABC3;"';
                             display2 = 'flex';
+                        }
+                        if (parseInt(list.status) !== 1) {
+                            live_color = 'style="background-color: #DCE0ED;"';
+                        } else {
+                            total_coins += 1
                         }
 
                         tag += '<div class="col-6 mb-3">';
