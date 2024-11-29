@@ -532,6 +532,9 @@ class UserSettingController extends BaseController
 
         } else {
             //$this->sendStopOrder($user_num, $market, $symbol);
+            //Holding 상태 주문 삭제
+            DB::table('tbl_trade_order')->where([['user_num', $user_num], ['coin_num', $coin_num], ['market', $market], ['idx', 4], ['pos_date', '']])->delete();
+            //실행 상태 표기를 정지 상태로 하기
             $success = DB::table('tbl_live_coins')->where([['user_num', $user_num], ['coin_num', $coin_num], ['market', $market]])
                 ->update(
                     [
