@@ -264,18 +264,18 @@
                             let bg_color = 'background-color: #ffc000;';
                             if (is_run === 2) {
                                 break_txt = "L_BREAK";
-                                bg_color = 'background-color: #ffc000;';
+                                bg_color = 'background-color: #ffc000; color: #000000;';
                             } else if (is_run === 3) {
                                 break_txt = "S_BREAK";
-                                bg_color = 'background-color: #e9e902;';
+                                bg_color = 'background-color: #e9e902; color: #000000;';
                             } else if (is_run === 4) {
                                 break_txt = "LS_BREAK";
-                                bg_color = 'background-color: #92d050;';
+                                bg_color = 'background-color: #92d050; color: #000000;';
                             }
                             tags += '        <span class="trade-color-break" style="'+bg_color+'">'+break_txt+'</span>';
                         }
                     } else {
-                        tags += '        <span class="trade-color-live" style="background-color:#ffacca; color: #000000">HOLDING</span>';
+                        tags += '        <span class="trade-color-live" style="background-color:#00B0F0; color: #FFFFFF">HOLDING</span>';
                     }
                 }
                 tags += '        <span class="trade-header-title">'+symbol+'</span>';

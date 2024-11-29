@@ -123,8 +123,8 @@
                         tag += '<div class="col-6 mb-3">';
                         tag += '<div class="row align-items-center">';
                         tag += '<div class="col-4">'+coin_name+'</div>';
-                        tag += '<div class="col-3"><span class="color-live" '+live_color+'>'+live_text+'</span></div>';
-                        tag += '<div class="col-5">';
+                        tag += '<div class="col-4"><span class="color-live" '+live_color+'>'+live_text+'</span></div>';
+                        tag += '<div class="col-4">';
                         tag += '<div id="btn-coin-stop_'+coin_id+'_'+coin_name+'_1" class="btn btn-user my-middle-btn btn-block btn_stop" style="display: '+display1+';">';
                         tag += '{{ __('userpage.stop') }}';
                         tag += '</div>';
