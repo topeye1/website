@@ -56,7 +56,7 @@
         </div>
     </div>
 </div>
-<div class="container" style="margin: 0 auto; width: 70%;">
+<div class="container" style="margin: 0 auto; width: 80%;">
     <div class="row mt-2" id="coin-run-layout" style="display: flex;">
 
     </div>
