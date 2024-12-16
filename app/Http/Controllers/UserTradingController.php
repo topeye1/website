@@ -154,6 +154,7 @@ class UserTradingController extends BaseController
         $live_symbols = array();
         $live_leverage = array();
         $live_limit = array();
+        $live_rate_rev = array();
         $live_running = array();
         $stop_symbols = array();
         $stop_leverage = array();
@@ -164,6 +165,7 @@ class UserTradingController extends BaseController
             $running = $row->live_status;
             $leverage = $row->leverage;
             $limit = $row->bet_limit;
+            $rate_rev = $row->rate_rev;
             $make_date = $row->make_date;
             if (strcasecmp($symbol, $tmp_symbol) == 0) {
                 array_push($sub_arr, $row);
@@ -185,6 +187,7 @@ class UserTradingController extends BaseController
                     array_push($live_symbols, $symbol);
                     array_push($live_leverage, $leverage);
                     array_push($live_limit, $limit);
+                    array_push($live_rate_rev, $rate_rev);
                 } else {
                     array_push($stop_symbols, $symbol);
                     array_push($stop_leverage, $leverage);
@@ -228,6 +231,7 @@ class UserTradingController extends BaseController
             'stop_symbols' => $stop_symbols,
             'live_leverage' => $live_leverage,
             'live_limit' => $live_limit,
+            'live_rate_rev' => $live_rate_rev,
             'stop_leverage' => $stop_leverage,
             'stop_limit' => $stop_limit,
             'live_running' => $live_running,
@@ -270,6 +274,7 @@ class UserTradingController extends BaseController
         $live_symbols = array();
         $live_leverage = array();
         $live_limit = array();
+        $live_rate_rev = array();
         $live_running = array();
         $stop_symbols = array();
         $stop_leverage = array();
@@ -280,6 +285,7 @@ class UserTradingController extends BaseController
             $running = $row->live_status;
             $leverage = $row->leverage;
             $limit = $row->bet_limit;
+            $rate_rev = $row->rate_rev;
             $make_date = $row->make_date;
             if (strcasecmp($symbol, $tmp_symbol) == 0) {
                 array_push($sub_arr, $row);
@@ -301,6 +307,7 @@ class UserTradingController extends BaseController
                     array_push($live_symbols, $symbol);
                     array_push($live_leverage, $leverage);
                     array_push($live_limit, $limit);
+                    array_push($live_rate_rev, $rate_rev);
                 } else {
                     array_push($stop_symbols, $symbol);
                     array_push($stop_leverage, $leverage);
@@ -344,6 +351,7 @@ class UserTradingController extends BaseController
             'stop_symbols' => $stop_symbols,
             'live_leverage' => $live_leverage,
             'live_limit' => $live_limit,
+            'live_rate_rev' => $live_rate_rev,
             'stop_leverage' => $stop_leverage,
             'stop_limit' => $stop_limit,
             'live_running' => $live_running,

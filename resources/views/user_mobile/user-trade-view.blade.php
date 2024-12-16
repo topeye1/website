@@ -195,6 +195,7 @@
                         let live_leverages = data.live_leverage;
                         let live_running = data.live_running;
                         let live_limit = data.live_limit;
+                        let live_rate_rev = data.live_rate_rev;
                         let hold_status = data.hold_status;
 
                         let stop_lists = data.stop_lists;
@@ -202,7 +203,7 @@
                         let stop_leverages = data.stop_leverage;
                         let stop_limit = data.stop_limit;
 
-                        showLiveTradingList(live_lists, live_symbols, live_leverages, live_running, live_limit, hold_status);
+                        showLiveTradingList(live_lists, live_symbols, live_leverages, live_running, live_limit, live_rate_rev, hold_status);
                         showStopTradingList(stop_lists, stop_symbols, stop_leverages, stop_limit);
                     }
                 },
@@ -211,7 +212,7 @@
                 }
             });
         }
-        function showLiveTradingList(lists, symbols, leverages, running, limits, holdings) {
+        function showLiveTradingList(lists, symbols, leverages, running, limits, rate_revs, holdings) {
             let tags = '';
             $('#trading_live_list').html('');
             for (let i = 0; i < lists.length; i++) {
@@ -219,6 +220,7 @@
                 let symbol = symbols[i];
                 let leverage = leverages[i];
                 let limit = limits[i];
+                let rate_rev = rate_revs[i];
                 let holding = holdings[i];
 
                 let t_profit = 0;
@@ -255,6 +257,7 @@
                 tags += '<div class="card shadow mt-3 mb-3 d-flex" id="trading_orders">';
                 tags += '<div class="trade-card-header">';
                 tags += '    <div class="d-flex mb-2">';
+                let profit_width = '30%';
                 if (show_mark === 1) {
                     let break_txt = "BREAK";
                     if (holding === 0) {
@@ -262,6 +265,7 @@
                             tags += '        <span class="trade-color-live">LIVE</span>';
                         } else {
                             let bg_color = 'background-color: #ffc000;';
+                            profit_width = '25%';
                             if (is_run === 2) {
                                 break_txt = "L_BREAK";
                                 bg_color = 'background-color: #ffc000; color: #000000;';
@@ -280,7 +284,9 @@
                 }
                 tags += '        <span class="trade-header-title">'+symbol+'</span>';
                 tags += '        <span class="trade-header-leverage">x'+leverage+'</span>';
-                tags += '        <span class="trade-header-profit" style="color: '+total_profit_color+'">'+total_profit+'</span>';
+                tags += '        <span class="trade-header-leverage">&nbsp; '+rate_rev+'%</span>';
+                tags += '        <span class="trade-header-leverage">&nbsp; $'+limit+'</span>';
+                tags += '        <span class="trade-header-profit" style="width: '+profit_width+'; color: '+total_profit_color+'">'+total_profit+'</span>';
                 tags += '     </div>';
                 tags += '    <div class="d-flex">';
                 tags += '        <div class="d-flex mt-2" style="width: 60%;">';
