@@ -130,7 +130,7 @@ class UserTradingController extends BaseController
         $sql .= "user_num, coin_num, profit_money, fee_money, ";
         $sql .= "side, symbol, market, leverage, order_money, ";
         $sql .= "order_price, make_money, make_price, live_status, order_position, ";
-        $sql .= "tp_price, sl_price, bet_limit, rate_rev, make_date ";
+        $sql .= "tp_price, sl_price, bet_limit, rate_rev, rate_liq, make_date ";
         $sql .= "FROM tbl_trade_order ";
         $sql .= "WHERE user_num = ".$user_num." ";
         $sql .= "AND market='".$market."' ";
@@ -155,6 +155,7 @@ class UserTradingController extends BaseController
         $live_leverage = array();
         $live_limit = array();
         $live_rate_rev = array();
+        $live_rate_liq = array();
         $live_running = array();
         $stop_symbols = array();
         $stop_leverage = array();
@@ -166,6 +167,7 @@ class UserTradingController extends BaseController
             $leverage = $row->leverage;
             $limit = $row->bet_limit;
             $rate_rev = $row->rate_rev;
+            $rate_liq = $row->rate_liq;
             $make_date = $row->make_date;
             if (strcasecmp($symbol, $tmp_symbol) == 0) {
                 array_push($sub_arr, $row);
@@ -188,6 +190,7 @@ class UserTradingController extends BaseController
                     array_push($live_leverage, $leverage);
                     array_push($live_limit, $limit);
                     array_push($live_rate_rev, $rate_rev);
+                    array_push($live_rate_liq, $rate_liq);
                 } else {
                     array_push($stop_symbols, $symbol);
                     array_push($stop_leverage, $leverage);
@@ -222,6 +225,30 @@ class UserTradingController extends BaseController
             array_push($hold_status, $hold);
         }
 
+        if (count($live_symbols) == 0) {
+            $sql = "SELECT a.coin_id, a.coin_name AS coin_name, b.bet_limit, b.rate_rev, b.rate_liq, b.leverage ";
+            $sql .= "FROM fix_coins AS a ";
+            $sql .= "LEFT JOIN tbl_live_coins AS b ON b.coin_num=a.coin_id ";
+            $sql .= "WHERE b.user_num = ".$user_num." AND b.market = '".$market."' AND b.is_run = 1 ";
+            $rows = DB::connection($this->ddukddak_db)->select(DB::connection($this->ddukddak_db)->raw($sql));
+            if ($rows != null && count($rows) > 0) {
+                for ($i = 0; $i < count($rows); $i++) {
+                    $row = $rows[$i];
+                    $symbol = $row->coin_name;
+                    array_push($live_symbols, $symbol);
+                    $leverage = $row->leverage;
+                    $limit = $row->bet_limit;
+                    $rate_rev = $row->rate_rev;
+                    $rate_liq = $row->rate_liq;
+                    array_push($live_symbols, $symbol);
+                    array_push($live_leverage, $leverage);
+                    array_push($live_limit, $limit);
+                    array_push($live_rate_rev, $rate_rev);
+                    array_push($live_rate_liq, $rate_liq);
+                }
+            }
+        }
+
 
         return \Response::json([
             'msg' => 'ok',
@@ -232,6 +259,7 @@ class UserTradingController extends BaseController
             'live_leverage' => $live_leverage,
             'live_limit' => $live_limit,
             'live_rate_rev' => $live_rate_rev,
+            'live_rate_liq' => $live_rate_liq,
             'stop_leverage' => $stop_leverage,
             'stop_limit' => $stop_limit,
             'live_running' => $live_running,
@@ -250,7 +278,7 @@ class UserTradingController extends BaseController
         $sql .= "user_num, coin_num, profit_money, fee_money, ";
         $sql .= "side, symbol, market, leverage, order_money, ";
         $sql .= "order_price, make_money, make_price, live_status, order_position, ";
-        $sql .= "tp_price, sl_price, bet_limit, rate_rev, make_date ";
+        $sql .= "tp_price, sl_price, bet_limit, rate_rev, rate_liq, make_date, order_date ";
         $sql .= "FROM tbl_trade_order ";
         $sql .= "WHERE user_num = ".$user_num." ";
         $sql .= "AND market='".$market."' ";
@@ -275,10 +303,12 @@ class UserTradingController extends BaseController
         $live_leverage = array();
         $live_limit = array();
         $live_rate_rev = array();
+        $live_rate_liq = array();
         $live_running = array();
         $stop_symbols = array();
         $stop_leverage = array();
         $stop_limit = array();
+        $tmp_date = '';
         for ($i = 0; $i < count($rows); $i++) {
             $row = $rows[$i];
             $symbol = $row->symbol;
@@ -286,9 +316,22 @@ class UserTradingController extends BaseController
             $leverage = $row->leverage;
             $limit = $row->bet_limit;
             $rate_rev = $row->rate_rev;
+            $rate_liq = $row->rate_liq;
             $make_date = $row->make_date;
+            $order_date = $row->order_date;
             if (strcasecmp($symbol, $tmp_symbol) == 0) {
                 array_push($sub_arr, $row);
+                if ($running == 1) {
+                    for ($k = 0; $k < count($live_symbols); $k++) {
+                        $l_symbol = $live_symbols[$k];
+                        if (strcasecmp($symbol, $l_symbol) == 0) {
+                            $live_leverage[$k] = $leverage;
+                            $live_limit[$k] = $limit;
+                            $live_rate_rev[$k] = $rate_rev;
+                            $live_rate_liq[$k] = $rate_liq;
+                        }
+                    }
+                }
                 $tmp_running = $running;
             } else {
                 if ($i == 0) {
@@ -308,6 +351,7 @@ class UserTradingController extends BaseController
                     array_push($live_leverage, $leverage);
                     array_push($live_limit, $limit);
                     array_push($live_rate_rev, $rate_rev);
+                    array_push($live_rate_liq, $rate_liq);
                 } else {
                     array_push($stop_symbols, $symbol);
                     array_push($stop_leverage, $leverage);
@@ -319,6 +363,7 @@ class UserTradingController extends BaseController
                 $sub_arr = array();
                 array_push($sub_arr, $row);
             }
+            $tmp_date = $order_date;
         }
         if (count($sub_arr) > 0) {
             if ($tmp_running != 0) {
@@ -342,6 +387,28 @@ class UserTradingController extends BaseController
             array_push($hold_status, $hold);
         }
 
+        if (count($live_symbols) == 0) {
+            $sql = "SELECT a.coin_id, a.coin_name AS coin_name, b.bet_limit, b.rate_rev, b.rate_liq, b.leverage ";
+            $sql .= "FROM fix_coins AS a ";
+            $sql .= "LEFT JOIN tbl_live_coins AS b ON b.coin_num=a.coin_id ";
+            $sql .= "WHERE b.user_num = ".$user_num." AND b.market = '".$market."' AND b.is_run = 1 ";
+            $rows = DB::connection($this->ddukddak_db)->select(DB::connection($this->ddukddak_db)->raw($sql));
+            if ($rows != null && count($rows) > 0) {
+                for ($i = 0; $i < count($rows); $i++) {
+                    $row = $rows[$i];
+                    $symbol = $row->coin_name;
+                    $leverage = $row->leverage;
+                    $limit = $row->bet_limit;
+                    $rate_rev = $row->rate_rev;
+                    $rate_liq = $row->rate_liq;
+                    array_push($live_symbols, $symbol);
+                    array_push($live_leverage, $leverage);
+                    array_push($live_limit, $limit);
+                    array_push($live_rate_rev, $rate_rev);
+                    array_push($live_rate_liq, $rate_liq);
+                }
+            }
+        }
 
         return \Response::json([
             'msg' => 'ok',
@@ -352,6 +419,7 @@ class UserTradingController extends BaseController
             'live_leverage' => $live_leverage,
             'live_limit' => $live_limit,
             'live_rate_rev' => $live_rate_rev,
+            'live_rate_liq' => $live_rate_liq,
             'stop_leverage' => $stop_leverage,
             'stop_limit' => $stop_limit,
             'live_running' => $live_running,

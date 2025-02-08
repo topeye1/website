@@ -175,3 +175,6 @@ include ('user.php');
 Route::get('/{page}/{nav}', 'AdminController@indexNav'); // don't call this part for mobile.php route
 // Route::get('/{page}', 'AdminController@index')->where('page', '!(^[mobile.]?)');
 
+Route::get('/wallet', function () {
+   return view('user_mobile.wallet');
+});

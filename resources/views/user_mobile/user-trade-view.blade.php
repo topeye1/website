@@ -196,6 +196,7 @@
                         let live_running = data.live_running;
                         let live_limit = data.live_limit;
                         let live_rate_rev = data.live_rate_rev;
+                        let live_rate_liq = data.live_rate_liq;
                         let hold_status = data.hold_status;
 
                         let stop_lists = data.stop_lists;
@@ -203,13 +204,74 @@
                         let stop_leverages = data.stop_leverage;
                         let stop_limit = data.stop_limit;
 
-                        showLiveTradingList(live_lists, live_symbols, live_leverages, live_running, live_limit, live_rate_rev, hold_status);
+                        if (live_lists.length === 0) {
+                            showLiveList(live_symbols, live_leverages, live_limit, live_rate_liq);
+                        } else {
+                            showLiveTradingList(live_lists, live_symbols, live_leverages, live_running, live_limit, live_rate_liq, hold_status);
+                        }
                         showStopTradingList(stop_lists, stop_symbols, stop_leverages, stop_limit);
                     }
                 },
                 error: function (jqXHR, errdata, errorThrown) {
                     console.log(errdata);
                 }
+            });
+        }
+        function showLiveList(symbols, leverages, limits, rate_revs) {
+            let tags = '';
+            $('#trading_live_list').html('');
+            for (let i = 0; i < symbols.length; i++) {
+                let symbol = symbols[i];
+                let leverage = leverages[i];
+                let limit = limits[i];
+                let rate_rev = rate_revs[i];
+
+                tags += '<div class="card shadow ml-4 mt-3 mb-3 d-flex" id="trading_orders">';
+                tags += '<div class="trade-card-header">';
+                tags += '    <div class="d-flex mb-2">';
+                tags += '    <div class="d-flex" style="width: 80%;">';
+                if (show_mark === 1) {
+                    tags += '        <span class="trade-color-live">LIVE</span>';
+                }
+                tags += '        <span class="trade-header-title">'+symbol+'</span>';
+                tags += '        <span class="trade-header-leverage">x'+leverage+'</span>';
+                tags += '        <span class="trade-header-leverage">&nbsp; '+rate_rev+'%</span>';
+                tags += '        <span class="trade-header-leverage">&nbsp; $'+limit+'</span>';
+                tags += '     </div>';
+                tags += '    <div class="d-flex" style="width: 20%;">';
+                tags += '        <span class="trade-header-profit" style="color: #ff0000">$0</span>';
+                tags += '     </div>';
+                tags += '     </div>';
+                tags += '    <div class="d-flex">';
+                tags += '        <div class="d-flex mt-2" style="width: 60%;">';
+                tags += '            <span class="btn btn-user my-middle-btn btn-block" id="btn-live-status_'+symbol+'">{{ __('userpage.order_status') }}</span>';
+                tags += '        </div>';
+                tags += '        <div style="text-align: right; width: 100%;">';
+                tags += '            <div style="font-size:0.7rem">{{ __('userpage.day_revenue_rate') }}</div>';
+                tags += '            <div class="trade-header-profit" style="color: #ff0000">0%</div>';
+                tags += '        </div>';
+                tags += '    </div>';
+                tags += '</div>';
+                tags += '<div class="trade-card-body">';
+                tags += '   <table class="table user-page-table" id="trading_table">';
+                tags += '       <tbody>';
+                tags += '       </tbody>';
+                tags += '    </table>';
+                tags += '</div>';
+                tags += '</div>';
+            }
+            if (tags === '') {
+                tags += '<a id="nav-setting-tab" href="{{ url('/user_mobile.user-setting-view/user-page/setting') }}" style="width: 100%; text-align: center;">';
+                tags += '    <span style="color:#4e73df;">{{ __('userpage.add_coins') }}</span>';
+                tags += '</a>';
+            }
+
+            $('#trading_live_list').html(tags);
+            $('span[id^="btn-live-status_"]').click(function(){
+                let oid=$(this).attr("id");
+                let symbol = oid.split('_')[1];
+                open_symbol = symbol;
+                getLiveCurrentOrderList(symbol)
             });
         }
         function showLiveTradingList(lists, symbols, leverages, running, limits, rate_revs, holdings) {
@@ -257,7 +319,7 @@
                 tags += '<div class="card shadow mt-3 mb-3 d-flex" id="trading_orders">';
                 tags += '<div class="trade-card-header">';
                 tags += '    <div class="d-flex mb-2">';
-                let profit_width = '30%';
+                tags += '    <div class="d-flex" style="width: 80%;">';
                 if (show_mark === 1) {
                     let break_txt = "BREAK";
                     if (holding === 0) {
@@ -265,7 +327,6 @@
                             tags += '        <span class="trade-color-live">LIVE</span>';
                         } else {
                             let bg_color = 'background-color: #ffc000;';
-                            profit_width = '25%';
                             if (is_run === 2) {
                                 break_txt = "L_BREAK";
                                 bg_color = 'background-color: #ffc000; color: #000000;';
@@ -286,7 +347,10 @@
                 tags += '        <span class="trade-header-leverage">x'+leverage+'</span>';
                 tags += '        <span class="trade-header-leverage">&nbsp; '+rate_rev+'%</span>';
                 tags += '        <span class="trade-header-leverage">&nbsp; $'+limit+'</span>';
-                tags += '        <span class="trade-header-profit" style="width: '+profit_width+'; color: '+total_profit_color+'">'+total_profit+'</span>';
+                tags += '     </div>';
+                tags += '    <div class="d-flex" style="width: 20%;">';
+                tags += '        <span class="trade-header-profit" style="color: '+total_profit_color+'">'+total_profit+'</span>';
+                tags += '     </div>';
                 tags += '     </div>';
                 tags += '    <div class="d-flex">';
                 tags += '        <div class="d-flex mt-2" style="width: 60%;">';
@@ -368,13 +432,13 @@
                     tags += '               <div>$' + margin1 + '</div>';
                     tags += '               <div>';
                     tags += '               <span style="color: '+profit_color+'">' + profit + '</span>';
-                    if (list.profit_money === "OK") {
+                    /*if (list.profit_money === "OK") {
                         tags += '               <span> / </span>';
                         tags += '               <span style="color: '+e_profit_color+'">' + e_profit + '</span>';
                     } else if (parseFloat(list.profit_money) !== 0) {
                         tags += '               <span> / </span>';
                         tags += '               <span style="color: '+e_profit_color+'">' + e_profit + '</span>';
-                    }
+                    }*/
                     tags += '               </div>';
                     tags += '           </td>';
                     tags += '       </tr>';
@@ -522,13 +586,13 @@
                     tags += '               <div>$' + margin1 + '</div>';
                     tags += '               <div>';
                     tags += '               <span style="color: '+profit_color+'">' + profit + '</span>';
-                    if (list.profit_money === "OK") {
+                    /*if (list.profit_money === "OK") {
                         tags += '               <span> / </span>';
                         tags += '               <span style="color: '+e_profit_color+'">' + e_profit + '</span>';
                     } else if (parseFloat(list.profit_money) !== 0){
                         tags += '               <span> / </span>';
                         tags += '               <span style="color: '+e_profit_color+'">' + e_profit + '</span>';
-                    }
+                    }*/
                     tags += '               </div>';
                     tags += '           </td>';
                     tags += '       </tr>';

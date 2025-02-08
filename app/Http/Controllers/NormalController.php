@@ -556,10 +556,11 @@ class NormalController extends BaseController
         $jdatas = json_decode($datas, TRUE);
         if ($jdatas) {
             for ($i = 0; $i < count($jdatas); $i++) {
-                if ($i == 6 || $i == 10)
-                    continue;
                 $val = $jdatas[$i];
                 $pname = $val['p1'];
+                if ($pname == 'w7' || $pname == 'w11') {
+                    continue;
+                }
                 $pvalue = $val['p2'];
                 $success = DB::table('fix_params')->where('pname', $pname)
                     ->update(

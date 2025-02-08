@@ -54,6 +54,7 @@
         let l_idx = 0;
         let pr_idx = 0;
         let lr_idx = 0;
+        let auto_ctime = 1; //자동확인 시간
 
         $(document).ready(function () {
             getMyInfo();

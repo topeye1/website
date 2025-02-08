@@ -63,7 +63,7 @@
 </div>
 
 <script>
-    let size_multiple = 5;
+    let size_multiple = 4;
 
     function getRunCoinList() {
         $.ajax({
@@ -78,6 +78,7 @@
                     leverage = data.leverage;
                     profit_range = data.profit_range;
                     liquidation_range = data.liquidation_range;
+                    auto_ctime = data.ctime;
                     $('#coin_max_trade_price').text(trade_money);
                     let amount = parseFloat(data.amount.toFixed(2))
                     let leverage_amount = amount * parseInt(leverage)
@@ -192,6 +193,7 @@
                 profit_range: profit_range,
                 liquidation_range: liquidation_range,
                 market: market,
+                ctime: auto_ctime
             },
             type: 'POST',
             success: function (data) {

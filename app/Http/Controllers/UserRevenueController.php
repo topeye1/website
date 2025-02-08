@@ -164,8 +164,8 @@ class UserRevenueController extends BaseController
         $sql .= "FROM tbl_trade_order ";
         $sql .= "WHERE user_num = ".$user_num." ";
         $sql .= "AND market='".$market."' ";
-        $sql .= "AND SUBSTRING(make_date, 1, 10)>='" . $day2 . "' ";
-        $sql .= "AND SUBSTRING(make_date, 1, 10)<='" . $day1 . "' ";
+        $sql .= "AND SUBSTRING(make_date, 1, 7)>='" . $day2 . "' ";
+        $sql .= "AND SUBSTRING(make_date, 1, 7)<='" . $day1 . "' ";
         $sql .= "AND profit_money != 'OK' ";
         $sql .= "ORDER BY make_date DESC ";
         $m_rows = DB::connection($this->ddukddak_db)->select(DB::connection($this->ddukddak_db)->raw($sql));
@@ -255,8 +255,8 @@ class UserRevenueController extends BaseController
         $sql .= "FROM tbl_trade_order ";
         $sql .= "WHERE user_num = ".$user_num." ";
         $sql .= "AND market='".$market."' ";
-        $sql .= "AND SUBSTRING(make_date, 1, 10)>='" . $day2 . "' ";
-        $sql .= "AND SUBSTRING(make_date, 1, 10)<='" . $day1 . "' ";
+        $sql .= "AND SUBSTRING(make_date, 1, 7)>='" . $day2 . "' ";
+        $sql .= "AND SUBSTRING(make_date, 1, 7)<='" . $day1 . "' ";
         $sql .= "AND profit_money != 'OK' ";
         $sql .= "ORDER BY make_date DESC ";
         $m_rows = DB::connection($this->ddukddak_db)->select(DB::connection($this->ddukddak_db)->raw($sql));

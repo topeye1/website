@@ -45,24 +45,6 @@
         </div>
     </div>
     <div class="row align-items-center mt-1 mb-3" style="width: auto; margin: 0 auto;">
-        <div>{{ __('userpage.profit_per_trade') }}</div>
-        <div class="col-10 select-direction">
-            <div class="direction-key" id="left-profit_per_trade"><i class="fa fa-caret-left" aria-hidden="true"></i></div>
-            <div class="direction-val">
-                <span id="profit_per_trade_val"></span>
-                <span class="ml-1">%</span>
-            </div>
-            <div class="direction-key" id="right-profit_per_trade"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
-        </div>
-        <div class="col-2 d-flex justify-content-end align-items-center">
-            <img id="profit_per_help" src="/assets/img/pngs/help.png" style="width: 20px; height: 20px; cursor: pointer;">
-        </div>
-        <div>
-            @include('tooltip.mobile_profit_per_trade')
-        </div>
-    </div>
-{{--
-    <div class="row align-items-center mt-1 mb-3" style="width: auto; margin: 0 auto;">
         <div>{{ __('userpage.liquidation_per_trade') }}</div>
         <div class="col-10 select-direction">
             <div class="direction-key" id="left-liquidation_per_trade"><i class="fa fa-caret-left" aria-hidden="true"></i></div>
@@ -79,7 +61,37 @@
             @include('tooltip.mobile_liquidation_per_trade')
         </div>
     </div>
---}}
+    <div class="row align-items-center mt-1 mb-3" style="width: auto; margin: 0 auto;">
+        <div>{{ __('userpage.profit_per_trade') }}</div>
+        <div class="col-10 select-direction">
+            <div class="direction-key" id="left-profit_per_trade"><i class="fa fa-caret-left" aria-hidden="true"></i></div>
+            <div class="direction-val">
+                <span id="profit_per_trade_val"></span>
+                <span class="ml-1">%</span>
+            </div>
+            <div class="direction-key" id="right-profit_per_trade"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+        </div>
+        <div class="col-2 d-flex justify-content-end align-items-center">
+            <img id="profit_per_help" src="/assets/img/pngs/help.png" style="width: 20px; height: 20px; cursor: pointer;">
+        </div>
+        <div>
+            @include('tooltip.mobile_profit_per_trade')
+        </div>
+    </div>
+    <div class="row align-items-center mt-1 mb-3" style="width: auto; margin: 0 auto;">
+        <div>{{ __('userpage.auto_check_time') }}</div>
+        <div class="col-10 select-direction">
+            <div class="direction-key" id="left-check_time"><i class="fa fa-caret-left" aria-hidden="true"></i></div>
+            <div class="direction-val">
+                <span id="check_time_val"></span>
+                <span class="ml-1">{{ __('userpage.time') }}</span>
+            </div>
+            <div class="direction-key" id="right-check_time"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+        </div>
+        <div class="col-md-2 d-flex" style="align-items: center;">
+        </div>
+    </div>
+
     <div class="row justify-content-center align-items-center mt-5">
         <div id="btn_trade_setting_confirm" class="btn btn-confirm" >{{ __('userpage.confirm') }}</div>
     </div>
@@ -100,6 +112,7 @@
     let l_datas = []; //거래 레버리지 배열
     let pr_datas = []; //거래 당 수익범위 배열
     let lr_datas = []; //거래 당 청산범위 배열
+    let check_time = 1; //자동확인 시간
     function getTradeValues() {
         if (market === 'bin') {
             $('#trade_logo_bin').css('display', 'block');
@@ -126,6 +139,7 @@
                     l_idx = data.u_datas.lid;
                     pr_idx = data.u_datas.prid;
                     lr_idx = data.u_datas.lrid;
+                    check_time = data.u_datas.ctime;
 
                     let trade_money = fildSelectedValue(t_datas, t_idx);
                     $('#max_trade_money').text(trade_money);
@@ -133,10 +147,9 @@
                     $('#leverage_val').text(leverage);
                     let profit_range = fildSelectedValue(pr_datas, pr_idx);
                     $('#profit_per_trade_val').text(profit_range);
-/*
                     let liquidation_range = fildSelectedValue(lr_datas, lr_idx);
                     $('#liquidation_per_trade_val').text(liquidation_range);
-*/
+                    $('#check_time_val').text(check_time);
                     let amount = parseFloat(data.amount.toFixed(2))
                     $('#user-hold-money').text(amount);
                 }
@@ -191,7 +204,6 @@
                 pr_idx = sel_id;
             }
         });
-/*
         $('#left-liquidation_per_trade').click( function () {
             let sel_id = lr_idx - 1;
             if (sel_id > 0) {
@@ -206,7 +218,19 @@
                 lr_idx = sel_id;
             }
         });
-*/
+        $('#left-check_time').click( function () {
+            check_time = check_time - 1;
+            if (check_time > 0) {
+                $('#check_time_val').text(check_time);
+            } else {
+                check_time = 1;
+                $('#check_time_val').text(check_time);
+            }
+        });
+        $('#right-check_time').click( function () {
+            check_time = check_time + 1;
+            $('#check_time_val').text(check_time);
+        });
 
         $('#max_money_help').click( function () {
             $('#max_trade_price_help').modal('show');
@@ -220,11 +244,9 @@
             $('#profit_per_trade_help').modal('show');
         });
 
-/*
         $('#liquidation_per_help').click( function () {
             $('#liquidation_per_trade_help').modal('show');
         });
-*/
 
         $('#btn_trade_setting_confirm').click( function () {
             $('#settingTradeModal').modal('show');
@@ -302,7 +324,8 @@
                 t_id: t_idx,
                 l_id: l_idx,
                 pr_id: pr_idx,
-                lr_id: lr_idx
+                lr_id: lr_idx,
+                ctime: check_time
             },
             type: 'POST',
             success: function (data) {

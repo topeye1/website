@@ -204,10 +204,21 @@ class UserSettingController extends BaseController
         date_default_timezone_set('Asia/Shanghai');
         $today = @date("Y-m-d", time());
 
-        $sql = "SELECT trade_money_id AS tid, leverage_id AS lid, profit_range_id AS prid, liquidation_range_id AS lrid ";
+        $sql = "SELECT trade_money_id AS tid, leverage_id AS lid, profit_range_id AS prid, liquidation_range_id AS lrid, check_time AS ctime ";
         $sql .= "FROM tbl_trade_setting ";
         $sql .= "WHERE user_num = ".$user_num." AND market='".$market."'";
         $u_rows = DB::connection($this->ddukddak_db)->select(DB::connection($this->ddukddak_db)->raw($sql));
+        $u_val = array();
+        if ($u_rows == null || count($u_rows) == 0)
+            $u_val = [
+                "tid" => 1,
+                "lid" => 3,
+                "prid" => 1,
+                "lrid" => 1,
+                "ctime" => 6
+            ];
+        else
+            $u_val = $u_rows[0];
 
         $sql = "SELECT fid, value, level ";
         $sql .= "FROM fix_trade_money ";
@@ -228,7 +239,7 @@ class UserSettingController extends BaseController
 
         return \Response::json([
             'msg' => 'ok',
-            'u_datas' => $u_rows[0],
+            'u_datas' => $u_val,
             't_datas' => $t_rows,
             'l_datas' => $l_rows,
             'pr_datas' => $pr_rows,
@@ -282,19 +293,41 @@ class UserSettingController extends BaseController
         $l_id = $request->post('l_id');
         $pr_id = $request->post('pr_id');
         $lr_id = $request->post('lr_id');
+        $ctime = $request->post('ctime');
         date_default_timezone_set('Asia/Shanghai');
         $update_date = date("Y-m-d H:i:s", time());
 
-        $success = DB::table('tbl_trade_setting')->where([['user_num', $user_num], ['market', $market]])
-            ->update(
-                [
-                    'trade_money_id' => $t_id,
-                    'leverage_id' => $l_id,
-                    'profit_range_id' => $pr_id,
-                    'liquidation_range_id' => $lr_id,
-                    'update_date' => $update_date
-                ]
-            );
+        $sql = "SELECT trade_money_id AS tid, leverage_id AS lid, profit_range_id AS prid, liquidation_range_id AS lrid, check_time AS ctime ";
+        $sql .= "FROM tbl_trade_setting ";
+        $sql .= "WHERE user_num = ".$user_num." AND market='".$market."'";
+        $rows = DB::connection($this->ddukddak_db)->select(DB::connection($this->ddukddak_db)->raw($sql));
+        if ($rows == null || count($rows) == 0) {
+            $success = DB::table('tbl_trade_setting')
+                ->insert(
+                    [
+                        'user_num' => $user_num,
+                        'market' => $market,
+                        'trade_money_id' => $t_id,
+                        'leverage_id' => $l_id,
+                        'profit_range_id' => $pr_id,
+                        'liquidation_range_id' => $lr_id,
+                        'check_time' => $ctime,
+                        'update_date' => $update_date
+                    ]
+                );
+        } else {
+            $success = DB::table('tbl_trade_setting')->where([['user_num', $user_num], ['market', $market]])
+                ->update(
+                    [
+                        'trade_money_id' => $t_id,
+                        'leverage_id' => $l_id,
+                        'profit_range_id' => $pr_id,
+                        'liquidation_range_id' => $lr_id,
+                        'check_time' => $ctime,
+                        'update_date' => $update_date
+                    ]
+                );
+        }
 
         if ($success) {
             return \Response::json([
@@ -314,8 +347,24 @@ class UserSettingController extends BaseController
         $market = $request->session()->get('market');
         date_default_timezone_set('Asia/Shanghai');
         $today = @date("Y-m-d", time());
+        date_default_timezone_set('Asia/Shanghai');
+        $update_date = date("Y-m-d H:i:s", time());
 
-        $sql = "SELECT b.value AS max_amount, c.value AS leverage, d.value AS profit_range, e.value AS liquidation_range ";
+        $sql = "SELECT * FROM tbl_trade_setting ";
+        $sql .= "WHERE user_num = ".$user_num." AND market='".$market."'";
+        $rows = DB::connection($this->ddukddak_db)->select(DB::connection($this->ddukddak_db)->raw($sql));
+        if ($rows == null || count($rows) == 0) {
+            $success = DB::table('tbl_trade_setting')
+                ->insert(
+                    [
+                        'user_num' => $user_num,
+                        'market' => $market,
+                        'update_date' => $update_date
+                    ]
+                );
+        }
+
+        $sql = "SELECT b.value AS max_amount, c.value AS leverage, d.value AS profit_range, e.value AS liquidation_range, a.check_time as ctime ";
         $sql .= "FROM tbl_trade_setting AS a ";
         $sql .= "LEFT JOIN fix_trade_money AS b ON b.fid = a.trade_money_id ";
         $sql .= "LEFT JOIN fix_leverage AS c ON c.fid = a.leverage_id ";
@@ -346,6 +395,7 @@ class UserSettingController extends BaseController
             'leverage' => $brow[0]->leverage,
             'profit_range' => $brow[0]->profit_range,
             'liquidation_range' => $brow[0]->liquidation_range,
+            'ctime' => $brow[0]->ctime,
             'amount' => $amount
         ]);
     }
@@ -426,7 +476,7 @@ class UserSettingController extends BaseController
         }
         $coin_row = DB::table('fix_coins')->where([['coin_name', $coin_name], ['market', $market]])->get()->first();
         if ($coin_row) {
-            $min_volume = (float)$price * $coin_row->min_volume ;
+            $min_volume = (float)$price * $coin_row->min_volume;
         }
 
         if ($min_volume != 0) {
@@ -451,6 +501,7 @@ class UserSettingController extends BaseController
         $profit_range = $request->post('profit_range');
         $liquidation_range = $request->post('liquidation_range');
         $market = $request->post('market');
+        $ctime = $request->post('ctime');
 
         if ($is_run == 1) {
             $coin_row = DB::table('fix_coins')->where([['coin_id', $coin_num], ['market', $market]])->get()->first();
@@ -497,6 +548,7 @@ class UserSettingController extends BaseController
                                 'is_run' => $is_run,
                                 'kid' => $key_id,
                                 'hold_status' => 0,
+                                'check_time' => $ctime,
                             ]
                         );
                 } else {
@@ -512,6 +564,7 @@ class UserSettingController extends BaseController
                                 'is_run' => $is_run,
                                 'market' => $market,
                                 'kid' => $key_id,
+                                'check_time' => $ctime,
                             ]
                         );
                 }
@@ -533,7 +586,7 @@ class UserSettingController extends BaseController
         } else {
             //$this->sendStopOrder($user_num, $market, $symbol);
             //포지션 상태가 아닌 주문 삭제
-            DB::table('tbl_trade_order')->where([['user_num', $user_num], ['coin_num', $coin_num], ['market', $market], ['pos_date', ''], ['make_date', '']])->delete();
+            //DB::table('tbl_trade_order')->where([['user_num', $user_num], ['coin_num', $coin_num], ['market', $market], ['pos_date', ''], ['make_date', '']])->delete();
             //실행 상태 표기를 정지 상태로 하기
             $success = DB::table('tbl_live_coins')->where([['user_num', $user_num], ['coin_num', $coin_num], ['market', $market]])
                 ->update(
