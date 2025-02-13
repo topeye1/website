@@ -222,12 +222,12 @@ return [
     'param_w8' => 'Rapid rise and fall standards (min)',
     'param_w9' => 'Fluctuating rate (%)',
     'param_w10' => 'break duration(min)',
-    'param_w11' => 'Select break order',
+    'param_w11' => 'Restart Time(min)',
     'param_m1' => 'Pre-sale (live1) order strength setting (0.5~5)',
     'param_m2' => 'Secondary trading (live2) order strength setting (0.5~5)',
     'param_m3' => '3rd trading (live3) order strength setting (0.5~5)',
     'param_m4' => '4th trading (live4) order strength setting (0.5~5)',
-    'param_m5' => 'Pre-order cancellation time (min)',
+    'param_m5' => 'Pre-order cancellation time (sec)',
     'param_m6' => 'Storage time after pre-purchase and pre-sale conclusion(sec)',
     'param_m7' => 'Reorder time after all sell and buy orders for pre-buy and pre-sell (Live_s1, b1) are executed(sec)',
     'param_m8' => 'After selling and buying of the upper Live_s1 and b1 are completed(sec)',
@@ -409,5 +409,7 @@ return [
     'error_cash2' => 'Please add cash or lower Max Trade Price.',
     'process_text' => 'Processing...',
     'time' => 'hours',
+    'break' => 'Break',
+    'restart' => 'Restart',
 ];
 

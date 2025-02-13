@@ -28,19 +28,19 @@
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_w1" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_w1') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_w1') }}</div>
                                     </div>
 
                                 </div>
                                 <div class="col-xl-6 col-md-6">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_w2" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_w2') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_w2') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -51,10 +51,10 @@
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_w3" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_w3') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_w3') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -70,19 +70,19 @@
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_w4" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_w4') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_w4') }}</div>
                                     </div>
 
                                 </div>
                                 <div class="col-xl-6 col-md-6">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_w5" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_w5') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_w5') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -93,16 +93,16 @@
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_w6" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_w6') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_w6') }}</div>
                                     </div>
 
                                 </div>
                                 {{--<div class="col-xl-6 col-md-6">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <select class="list-pages" id="input_param_w7" style="text-align: center; width: 100%; font-size: .8rem; border-radius: 0.4rem; padding: 0.5rem 0; border: 1px solid #d1d3e2;" disabled>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -110,7 +110,7 @@
                                                 <option value="4">4</option>
                                             </select>
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_w7') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_w7') }}</div>
                                     </div>
                                 </div>--}}
                             </div>
@@ -126,19 +126,19 @@
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_w8" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_w8') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_w8') }}</div>
                                     </div>
 
                                 </div>
                                 <div class="col-xl-6 col-md-6">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_w9" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_w9') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_w9') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -149,30 +149,53 @@
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_w10" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_w10') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_w10') }}</div>
                                     </div>
 
                                 </div>
-                                {{--<div class="col-xl-6 col-md-6">
+                                <div class="col-xl-6 col-md-6">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
-                                            <select class="list-pages" id="input_param_w11" style="text-align: center; width: 100%; font-size: .8rem; border-radius: 0.4rem; padding: 0.5rem 0; border: 1px solid #d1d3e2;" disabled>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                            </select>
+                                        <div class="col-12">
+                                            <div class="form-check form-check-inline" style="padding: 0.4rem 0.2rem;">
+                                                <input class="form-check-input" type="radio" name="sbreakRadioOptions" id="sbreak_1" style="width: 1.2rem; height: 1.2rem;">
+                                                <span class="form-check-label">{{ __('userpage.break') }}</span>
+                                            </div>
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_w11') }}</div>
                                     </div>
-                                </div>--}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row w-100 mb-3 pl-3 pr-3 justify-content-start">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6 pr-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-4">
+                                            <input type="number" class="form-control form-control-user my-input" id="input_param_w11" style="text-align: center;">
+                                        </div>
+                                        <div class="col-8">{{ __('userpage.param_w11') }}</div>
+                                    </div>
+
+                                </div>
+                                <div class="col-xl-6 col-md-6">
+                                    <div class="row align-items-center">
+                                        <div class="col-12">
+                                            <div class="form-check form-check-inline" style="padding: 0.4rem 0.2rem;">
+                                                <input class="form-check-input" type="radio" name="sbreakRadioOptions" id="sbreak_2" style="width: 1.2rem; height: 1.2rem;">
+                                                <span class="form-check-label">{{ __('userpage.restart') }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <input type="hidden" id="input_param_w12">
 
                 <div class="card-body form-group param-body-maker" style="display: none; width: 80%; margin: 0 auto">
                     <div class="row w-100 mb-3 pl-3 pr-3 justify-content-start">
@@ -180,19 +203,19 @@
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m1" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_m1') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_m1') }}</div>
                                     </div>
 
                                 </div>
                                 <div class="col-xl-6 col-md-6">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m2" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_m2') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_m2') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -203,19 +226,19 @@
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m3" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_m3') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_m3') }}</div>
                                     </div>
 
                                 </div>
                                 <div class="col-xl-6 col-md-6">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m4" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_m4') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_m4') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -226,19 +249,19 @@
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m5" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_m5') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_m5') }}</div>
                                     </div>
 
                                 </div>
                                 <div class="col-xl-6 col-md-6">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m6" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_m7') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_m7') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -249,19 +272,19 @@
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m7" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_m8') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_m8') }}</div>
                                     </div>
 
                                 </div>
                                 <div class="col-xl-6 col-md-6">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m8" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_m9') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_m9') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -272,19 +295,19 @@
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m9" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_m10') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_m10') }}</div>
                                     </div>
 
                                 </div>
                                 <div class="col-xl-6 col-md-6">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m10" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_m11') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_m11') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -295,19 +318,19 @@
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m11" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_m12') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_m12') }}</div>
                                     </div>
 
                                 </div>
                                 <div class="col-xl-6 col-md-6">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m12" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_m13') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_m13') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -318,47 +341,47 @@
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m13" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_m14') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_m14') }}</div>
                                     </div>
 
                                 </div>
                                 <div class="col-xl-6 col-md-6">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m14" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_m15') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_m15') }}</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row w-100 mb-3 pl-3 pr-3 justify-content-start">
+                    {{--<div class="row w-100 mb-3 pl-3 pr-3 justify-content-start">
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m15" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_m16') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_m16') }}</div>
                                     </div>
 
                                 </div>
                                 <div class="col-xl-6 col-md-6">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m16" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_m19') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_m19') }}</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>--}}
                 </div>
 
                 <div class="card-body form-group param-body-etc" style="display: none; width: 80%; margin: 0 auto">
@@ -367,18 +390,18 @@
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_e1" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_e1') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_e1') }}</div>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-md-6">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_e2" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_e2') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_e2') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -389,18 +412,18 @@
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_e3" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_e3') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_e3') }}</div>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-md-6">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_e4" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_e4') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_e4') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -411,10 +434,10 @@
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_e5" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_e5') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_e5') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -428,10 +451,10 @@
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_h1" style="text-align: center;">
                                         </div>
-                                        <div class="col-9">{{ __('userpage.param_h1') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_h1') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -440,7 +463,7 @@
                 </div>
 
                 <div class="card-footer text-center card-notice-add-btn">
-                    <div id="edit_param_button" class="btn btn-success mt-1" style="width: 80px; margin-right: 30px;">{{ __('userpage.edit') }}</div>
+                    <div id="save_param_button" class="btn btn-success mt-1" style="width: 80px; margin-right: 30px;">{{ __('userpage.edit') }}</div>
                 </div>
 
             </div>
@@ -453,7 +476,7 @@
 
     <script>
         let setv = 'watcher';
-        let e_param = ['m1', 'm2', 'm3', 'm4', 'm5', 'm7', 'm8', 'm9', 'm10', 'm11', 'm12', 'm13', 'm14', 'm15', 'm16', 'm19']
+        let e_param = ['m1', 'm2', 'm3', 'm4', 'm5', 'm7', 'm8', 'm9', 'm10', 'm11', 'm12', 'm13', 'm14', 'm15']//, 'm16', 'm19']
         getParamInfo();
         $(document).ready(function () {
             $('.param-tab-header .nav-link').click(function(){
@@ -549,6 +572,7 @@
                     val = 0.5
                 $('#input_param_m14').val(val)
             });
+            /*
             $('#input_param_m15').change(function() {
                 let val = $('#input_param_m15').val()
                 if (parseFloat(val) > 3)
@@ -557,11 +581,16 @@
                     val = -3
                 $('#input_param_m15').val(val)
             });
+            */
+            $('input[id^="sbreak_"]').click(function(){
+                let oid=$(this).attr("id");
+                $('#input_param_w12').val(oid.split('_')[1])
+            });
 
-            $('#edit_param_button').click(function () {
+            $('#save_param_button').click(function () {
                 let edit_datas = [];
                 if (setv === 'watcher') {
-                    for (let i = 1; i <= 11; i++) {
+                    for (let i = 1; i <= 12; i++) {
                         let param1 = 'w' + i;
                         let param2 = $('#input_param_w'+i).val();
                         let param = {
@@ -661,9 +690,16 @@
                                     $('#input_param_w9').val(list.pvalue);
                                 } else if (list.pname === 'w10') {
                                     $('#input_param_w10').val(list.pvalue);
-                                } /*else if (list.pname === 'w11') {
+                                } else if (list.pname === 'w11') {
                                     $('#input_param_w11').val(list.pvalue);
-                                }*/
+                                } else if (list.pname === 'w12') {
+                                    $('#input_param_w12').val(list.pvalue)
+                                    if (parseInt(list.pvalue) === 1) {
+                                        $('#sbreak_1').prop("checked", true);
+                                    } else {
+                                        $('#sbreak_2').prop("checked", true);
+                                    }
+                                }
                             } else if (list.ptype === 'm') {
                                 if (list.pname === 'm1') {
                                     $('#input_param_m1').val(list.pvalue);
@@ -693,11 +729,14 @@
                                     $('#input_param_m13').val(list.pvalue);
                                 } else if (list.pname === 'm15') {
                                     $('#input_param_m14').val(list.pvalue);
-                                } else if (list.pname === 'm16') {
+                                }
+                                /*
+                                else if (list.pname === 'm16') {
                                     $('#input_param_m15').val(list.pvalue);
                                 } else if (list.pname === 'm19') {
                                     $('#input_param_m16').val(list.pvalue);
                                 }
+                                */
                             } else if (list.ptype === 'e') {
                                 if (list.pname === 'e1') {
                                     $('#input_param_e1').val(list.pvalue);

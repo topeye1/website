@@ -230,6 +230,7 @@ class UserTradingController extends BaseController
             $sql .= "FROM fix_coins AS a ";
             $sql .= "LEFT JOIN tbl_live_coins AS b ON b.coin_num=a.coin_id ";
             $sql .= "WHERE b.user_num = ".$user_num." AND b.market = '".$market."' AND b.is_run = 1 ";
+            $sql .= "ORDER BY a.coin_name";
             $rows = DB::connection($this->ddukddak_db)->select(DB::connection($this->ddukddak_db)->raw($sql));
             if ($rows != null && count($rows) > 0) {
                 for ($i = 0; $i < count($rows); $i++) {
@@ -392,6 +393,7 @@ class UserTradingController extends BaseController
             $sql .= "FROM fix_coins AS a ";
             $sql .= "LEFT JOIN tbl_live_coins AS b ON b.coin_num=a.coin_id ";
             $sql .= "WHERE b.user_num = ".$user_num." AND b.market = '".$market."' AND b.is_run = 1 ";
+            $sql .= "ORDER BY a.coin_name";
             $rows = DB::connection($this->ddukddak_db)->select(DB::connection($this->ddukddak_db)->raw($sql));
             if ($rows != null && count($rows) > 0) {
                 for ($i = 0; $i < count($rows); $i++) {

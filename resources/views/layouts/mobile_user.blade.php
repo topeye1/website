@@ -75,7 +75,7 @@
 @include('layouts.footer-user')
 
 <script>
-    let market = 'bin';
+    let market = 'htx';
     let my_coupon = 0; //나의 쿠폰 잔액
     let my_fee = 0; //나의 수수료율
     let my_points = 0; //나의 포인트 수량

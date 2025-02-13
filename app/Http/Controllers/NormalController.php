@@ -558,7 +558,7 @@ class NormalController extends BaseController
             for ($i = 0; $i < count($jdatas); $i++) {
                 $val = $jdatas[$i];
                 $pname = $val['p1'];
-                if ($pname == 'w7' || $pname == 'w11') {
+                if ($pname == 'w7') {
                     continue;
                 }
                 $pvalue = $val['p2'];
