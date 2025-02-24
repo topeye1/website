@@ -64,6 +64,8 @@
 
 <script>
     let size_multiple = 4;
+    let max_coins = 50;
+    let run_coins = 0;
 
     function getRunCoinList() {
         $.ajax({
@@ -94,6 +96,9 @@
                     let total_coins = 0;
                     let live_total_coins = leverage_amount / (trade_money * size_multiple);
                     live_total_coins = Math.floor(live_total_coins);
+                    if (live_total_coins > max_coins) {
+                        live_total_coins = max_coins;
+                    }
                     let running_coins = 0;
                     for (let i = 0; i < lists.length; i++) {
                         let list = lists[i];
@@ -140,6 +145,7 @@
                         tag += '</div>';
                         tag += '</div>';
                     }
+                    run_coins = running_coins;
                     if (live_total_coins > total_coins)
                         live_total_coins = total_coins;
                     $('#coin-run-layout').html(tag);
@@ -181,38 +187,42 @@
     }
 
     function setCoinRunStatus(coin_num, symbol, isRun) {
-        $.ajax({
-            url: '/user.setRunning',
-            headers: {'Authorization': `Bearer ${window.localStorage.authToken}`},
-            data: {
-                coin_num: coin_num,
-                symbol: symbol,
-                is_run: isRun,
-                trade_money: trade_money,
-                leverage: leverage,
-                profit_range: profit_range,
-                liquidation_range: liquidation_range,
-                market: market,
-                ctime: auto_ctime
-            },
-            type: 'POST',
-            success: function (data) {
-                if (data.msg === "ok") {
-                    getRunCoinList();
-                } else if (data.msg === "exceed") {
-                    alert("{{ __('userpage.api_description1') }} \n {{ __('userpage.api_description2') }}");
-                } else if (data.msg === "err") {
-                    alert("{{ __('userpage.api_description1') }} \n {{ __('userpage.api_description2') }}");
-                } else if (data.msg === "cnt") {
-                    let limit = data.limit;
-                    alert("{{ __('userpage.live_coin_condition1') }}"+limit+"{{ __('userpage.live_coin_condition2') }}");
-                } else if (data.msg === "nocoin") {
-                    alert("The coin does not exist.");
+        if (run_coins >= max_coins && isRun === 1) {
+            alert("{{ __('userpage.error_max_coins') }}");
+        } else {
+            $.ajax({
+                url: '/user.setRunning',
+                headers: {'Authorization': `Bearer ${window.localStorage.authToken}`},
+                data: {
+                    coin_num: coin_num,
+                    symbol: symbol,
+                    is_run: isRun,
+                    trade_money: trade_money,
+                    leverage: leverage,
+                    profit_range: profit_range,
+                    liquidation_range: liquidation_range,
+                    market: market,
+                    ctime: auto_ctime
+                },
+                type: 'POST',
+                success: function (data) {
+                    if (data.msg === "ok") {
+                        getRunCoinList();
+                    } else if (data.msg === "exceed") {
+                        alert("{{ __('userpage.api_description1') }} \n {{ __('userpage.api_description2') }}");
+                    } else if (data.msg === "err") {
+                        alert("{{ __('userpage.api_description1') }} \n {{ __('userpage.api_description2') }}");
+                    } else if (data.msg === "cnt") {
+                        let limit = data.limit;
+                        alert("{{ __('userpage.live_coin_condition1') }}"+limit+"{{ __('userpage.live_coin_condition2') }}");
+                    } else if (data.msg === "nocoin") {
+                        alert("The coin does not exist.");
+                    }
+                },
+                error: function (jqXHR, errdata, errorThrown) {
+                    console.log(errdata);
                 }
-            },
-            error: function (jqXHR, errdata, errorThrown) {
-                console.log(errdata);
-            }
-        });
+            });
+        }
     }
 </script>
