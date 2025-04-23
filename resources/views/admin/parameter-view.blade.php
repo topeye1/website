@@ -21,8 +21,8 @@
                     </ul>
                 </div>
 
-
                 <div class="card-body form-group param-body-watcher" style="width: 80%; margin: 0 auto">
+                    {{-- Watcher Parameter --}}
                     <div class="row w-100 mb-3 pl-3 pr-3 justify-content-start">
                         <div class="col-12">
                             <div class="row">
@@ -216,9 +216,9 @@
                         </div>
                     </div>
                 </div>
+                {{-- Maker Parameter --}}
                 <input type="hidden" id="input_param_w12">
                 <input type="hidden" id="input_param_w14">
-
                 <div class="card-body form-group param-body-maker" style="display: none; width: 80%; margin: 0 auto">
                     <div class="row w-100 mb-3 pl-3 pr-3 justify-content-start">
                         <div class="col-12">
@@ -295,64 +295,88 @@
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
                                         <div class="col-4">
-                                            <input type="number" class="form-control form-control-user my-input" id="input_param_m8" style="text-align: center;">
+                                            <input type="number" class="form-control form-control-user my-input" id="input_param_m29" style="text-align: center;">
                                         </div>
-                                        <div class="col-8">{{ __('userpage.param_m8') }}</div>
+                                        <div class="col-8">{{ __('userpage.param_m31') }}</div>
                                     </div>
 
                                 </div>
                                 <div class="col-xl-6 col-md-6">
+                                    <div class="row align-items-center">
+                                        <div class="col-4">
+                                            <input type="number" class="form-control form-control-user my-input" id="input_param_m8" style="text-align: center;">
+                                        </div>
+                                        <div class="col-8">{{ __('userpage.param_m8') }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row w-100 mb-3 pl-3 pr-3 justify-content-start">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
                                         <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m9" style="text-align: center;">
                                         </div>
                                         <div class="col-8">{{ __('userpage.param_m9') }}</div>
                                     </div>
+
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row w-100 mb-3 pl-3 pr-3 justify-content-start">
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-xl-6 col-md-6 pr-3">
+                                <div class="col-xl-6 col-md-6">
                                     <div class="row align-items-center">
                                         <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m10" style="text-align: center;">
                                         </div>
                                         <div class="col-8">{{ __('userpage.param_m10') }}</div>
                                     </div>
-
                                 </div>
-                                <div class="col-xl-6 col-md-6">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row w-100 mb-3 pl-3 pr-3 justify-content-start">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
                                         <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m11" style="text-align: center;">
                                         </div>
                                         <div class="col-8">{{ __('userpage.param_m11') }}</div>
                                     </div>
+
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row w-100 mb-3 pl-3 pr-3 justify-content-start">
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-xl-6 col-md-6 pr-3">
+                                <div class="col-xl-6 col-md-6">
                                     <div class="row align-items-center">
                                         <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m12" style="text-align: center;">
                                         </div>
                                         <div class="col-8">{{ __('userpage.param_m12') }}</div>
                                     </div>
-
                                 </div>
-                                <div class="col-xl-6 col-md-6">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row w-100 mb-3 pl-3 pr-3 justify-content-start">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
                                         <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m13" style="text-align: center;">
                                         </div>
                                         <div class="col-8">{{ __('userpage.param_m13') }}</div>
+                                    </div>
+
+                                </div>
+                                <div class="col-xl-6 col-md-6">
+                                    <div class="row align-items-center">
+                                        <div class="col-4">
+                                            <input type="number" class="form-control form-control-user my-input" id="input_param_m14" style="text-align: center;">
+                                        </div>
+                                        <div class="col-8">{{ __('userpage.param_m14') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -364,46 +388,18 @@
                                 <div class="col-xl-6 col-md-6 pr-3">
                                     <div class="row align-items-center">
                                         <div class="col-4">
-                                            <input type="number" class="form-control form-control-user my-input" id="input_param_m14" style="text-align: center;">
-                                        </div>
-                                        <div class="col-8">{{ __('userpage.param_m14') }}</div>
-                                    </div>
-
-                                </div>
-                                <div class="col-xl-6 col-md-6">
-                                    <div class="row align-items-center">
-                                        <div class="col-4">
                                             <input type="number" class="form-control form-control-user my-input" id="input_param_m15" style="text-align: center;">
                                         </div>
                                         <div class="col-8">{{ __('userpage.param_m15') }}</div>
                                     </div>
+
+                                </div>
+                                <div class="col-xl-6 col-md-6">
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {{--<div class="row w-100 mb-3 pl-3 pr-3 justify-content-start">
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-xl-6 col-md-6 pr-3">
-                                    <div class="row align-items-center">
-                                        <div class="col-4">
-                                            <input type="number" class="form-control form-control-user my-input" id="input_param_m16" style="text-align: center;">
-                                        </div>
-                                        <div class="col-8">{{ __('userpage.param_m16') }}</div>
-                                    </div>
-
-                                </div>
-                                <div class="col-xl-6 col-md-6">
-                                    <div class="row align-items-center">
-                                        <div class="col-4">
-                                            <input type="number" class="form-control form-control-user my-input" id="input_param_m19" style="text-align: center;">
-                                        </div>
-                                        <div class="col-8">{{ __('userpage.param_m19') }}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>--}}
                     <div class="row w-100 mb-3 pl-3 pr-3 justify-content-start">
                         <div class="col-12">
                             <div class="row">
@@ -478,8 +474,47 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class="row w-100 mb-3 pl-3 pr-3 justify-content-start">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6 pr-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-12">{{ __('userpage.param_m30') }}</div>
+                                    </div>
 
+                                </div>
+                                <div class="col-xl-6 col-md-6">
+                                    <div class="row align-items-center">
+                                        <div class="col-12">{{ __('userpage.param_m32') }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row w-100 mb-3 pl-3 pr-3 justify-content-start">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6 pr-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-4">
+                                            <input type="number" class="form-control form-control-user my-input" id="input_param_m28" style="text-align: center;">
+                                        </div>
+                                        <div class="col-8">{{ __('userpage.param_m25') }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-md-6 pr-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-4">
+                                            <input type="number" class="form-control form-control-user my-input" id="input_param_m30" style="text-align: center;">
+                                        </div>
+                                        <div class="col-8">{{ __('userpage.param_m25') }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- ETC Parameter --}}
                 <div class="card-body form-group param-body-etc" style="display: none; width: 80%; margin: 0 auto">
                     <div class="row w-100 mb-3 pl-3 pr-3 justify-content-start">
                         <div class="col-12">
@@ -540,7 +575,7 @@
                         </div>
                     </div>
                 </div>
-
+                {{-- Holding Parameter --}}
                 <div class="card-body form-group param-body-holding" style="display: none; width: 80%; margin: 0 auto">
                     <div class="row w-100 mb-3 pl-3 pr-3 justify-content-start">
                         <div class="col-12">
@@ -557,7 +592,7 @@
                         </div>
                     </div>
                 </div>
-
+                {{-- Edit Button --}}
                 <div class="card-footer text-center card-notice-add-btn">
                     <div id="save_param_button" class="btn btn-success mt-1" style="width: 80px; margin-right: 30px;">{{ __('userpage.edit') }}</div>
                 </div>
@@ -573,7 +608,7 @@
     <script>
         let setv = 'watcher';
         let w_param = ['w1', 'w2', 'w3', 'w4', 'w5', 'w6', 'w8', 'w9', 'w10', 'w11', 'w12', 'w13', 'w14']
-        let e_param = ['m1', 'm2', 'm3', 'm4', 'm5', 'm7', 'm8', 'm9', 'm10', 'm11', 'm12', 'm13', 'm14', 'm15', 'm24', 'm25', 'm26', 'm27']
+        let m_param = ['m1', 'm2', 'm3', 'm4', 'm5', 'm7', 'm8', 'm9', 'm10', 'm11', 'm12', 'm13', 'm14', 'm15', 'm24', 'm25', 'm26', 'm27', 'm28', 'm29', 'm30']
         getParamInfo();
         $(document).ready(function () {
             $('.param-tab-header .nav-link').click(function(){
@@ -693,6 +728,12 @@
                     val = 0
                 $('#input_param_m27').val(val)
             });
+            $('#input_param_m28').change(function() {
+                let val = $('#input_param_m28').val()
+                if (parseFloat(val) <= 0)
+                    val = 0
+                $('#input_param_m28').val(val)
+            });
             /*
             $('#input_param_m15').change(function() {
                 let val = $('#input_param_m15').val()
@@ -725,8 +766,8 @@
                         edit_datas.push(param);
                     }
                 } else if (setv === 'maker') {
-                    for (let i = 0; i < e_param.length; i++) {
-                        let p_name = e_param[i]
+                    for (let i = 0; i < m_param.length; i++) {
+                        let p_name = m_param[i]
                         let p_val = $('#input_param_'+p_name).val();
                         let param = {
                             p1: p_name,
@@ -816,9 +857,9 @@
                                     }
                                 }
                             } else if (list.ptype === 'm') {
-                                for (let j = 0; j < e_param.length; j++) {
-                                    if (list.pname === e_param[j]) {
-                                        $('#input_param_'+e_param[j]).val(list.pvalue);
+                                for (let j = 0; j < m_param.length; j++) {
+                                    if (list.pname === m_param[j]) {
+                                        $('#input_param_'+m_param[j]).val(list.pvalue);
                                     }
                                 }
                             } else if (list.ptype === 'e') {
